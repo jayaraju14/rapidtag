@@ -1,0 +1,94 @@
+.example-stepper {
+    margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+    margin-top: 16px;
+}
+
+#stepper {
+    margin: 115px;
+}
+
+.mat-form-field {
+    margin-top: 16px;
+    display: inline;
+    width: 350px !important;
+}
+
+form {
+    width: 500px;
+}
+
+::ng-deep .iti {
+    margin: -29px !important;
+}
+
+::ng-deep .phone .mat-form-field-wrapper .mat-form-field-infix .mat-form-field-label-wrapper {
+    margin-left: 20px !important;
+}
+
+::ng-deep .mat-horizontal-stepper-header {
+    box-sizing: border-box;
+    flex-direction: column-reverse !important;
+    height: auto;
+    padding: 24px;
+}
+
+::ng-deep .mat-horizontal-stepper-header .mat-step-label {
+    padding: 0px 0px 16px !important;
+}
+
+.progress-bar {
+    padding: 0;
+}
+
+.progress {
+    width: 50px;
+}
+
+#fileInput {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.mat-toolbar-single-row {
+    height: auto !important;
+    background: transparent;
+    padding: 0;
+}
+
+.mat-toolbar-single-row button {
+    width: 100px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.message {
+    background-color: #ddd;
+    padding: 15px;
+    color: #333;
+    border: #aaa solid 1px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 575px) {
+    #stepper {
+        margin: 85px 16px 0 22px;
+    }
+     ::ng-deep .mat-horizontal-stepper-header .mat-step-label {
+        // padding: 0px 0px 16px !important;
+        display: none;
+    }
+    form {
+        width: 350px;
+    }
+}

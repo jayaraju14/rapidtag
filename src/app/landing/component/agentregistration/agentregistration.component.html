@@ -1,0 +1,31 @@
+<div class="container">
+    <h1 color="primary" headline-1>Start Agent Registration</h1>
+    <p>If you would like to become a recognised Study Group agent, please complete the following form. The form is in eight steps and must be completed in English.</p><br>
+    <div class="example-container">
+        <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="please enter your first name" formControlName="first_name" required>
+                <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error>
+            </mat-form-field><br><br>
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="please enter your last name" formControlName="last_name" required>
+                <mat-error *ngIf="f.last_name.invalid">Please enter valid last name</mat-error>
+            </mat-form-field><br><br>
+            <mat-form-field>
+                <mat-label>Company Name</mat-label>
+                <input matInput placeholder="please enter your Company name" formControlName="company_Name" required>
+                <mat-error *ngIf="f.company_Name.invalid">Please enter valid comopnay name</mat-error>
+            </mat-form-field><br><br>
+            <mat-form-field>
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" formControlName="Email_Address" required>
+                <mat-error *ngIf="f.Email_Address.invalid">Please enter valid email</mat-error>
+            </mat-form-field><br><br><br>
+
+            <mat-checkbox required>I Consent to the collection of my personal information in accordance with the TAG Privacy Policy</mat-checkbox><br><br>
+            <button mat-raised-button color="primary" [routerLink]="['/agent-registerDetails']">Start Registration</button>
+        </form>
+    </div>
+</div>

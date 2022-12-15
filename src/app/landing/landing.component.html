@@ -1,0 +1,289 @@
+<!-- Preloader -->
+<div class="preloader">
+    <div class="preloader-wrapper">
+        <div class="preloader-content">
+            <div class="blob-1"></div>
+            <div class="blob-2"></div>
+        </div>
+    </div>
+</div>
+<!-- Preloader -->
+<!-- Navbar -->
+<div class="fixed-top bg-white">
+
+    <div class="navbar-area sticky-black">
+        <div class="container">
+            <div class="mobile-nav">
+                <a href="index.html" class="mobile-brand">
+                    <img src="assets/images/tag logo.png" alt="logo" class="logo">
+                </a>
+                <div class="navbar-option">
+                    <div class="navbar-option-item">
+                        <button type="button" routerLink="agent-register">
+                            <i class="flaticon-user" ></i>
+                        </button>
+                    </div>
+                    <div class="navbar-option-item side-topbar-option">
+                        <button type="button">
+                            <i class="flaticon-grid" ></i>
+                        </button>
+                    </div>
+                    <div class="navbar-option-item">
+                        <button type="button" class="search-option">
+                            <i class="icofont-search-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/images/tag logo.png" alt="logo" class="logo">
+                    </a>
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a routerLink="" class="nav-link active">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Agents</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Students</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="services.html" class="nav-link dropdown-toggle">Universities</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="pricing.html" class="nav-link">Graduate</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pricing.html" class="nav-link">Under Graduate</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link dropdown-toggle">Services</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="services.html" class="nav-link">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pricing.html" class="nav-link">Trending Courses</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="faqs.html" class="nav-link">FAQ's</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="our-team.html" class="nav-link">Webinars</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="testimonial.html" class="nav-link">Testimonial</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-option">
+                        <div class="navbar-option-item">
+                            <a routerLink="agent-register" class="btn main-btn">Login Or Register</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Navbar -->
+<router-outlet (activate)="onScroll($event)"></router-outlet>
+
+<!-- Footer -->
+<footer class="bg-off-white footer">
+    <div class="footer-shapes">
+        <div class="footer-shape">
+            <img src="assets/images/shape-1.png" alt="shape">
+        </div>
+        <div class="footer-shape footer-round-shape">
+            <img src="assets/images/shape-2.png" alt="shape">
+        </div>
+    </div>
+    <div class="footer-upper pt-100 pb-80 position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="footer-content-item">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="assets/images/tag logo.png" alt="logo"></a>
+                        </div>
+                        <div class="footer-details">
+                            <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate.</p>
+                            <ul class="social-list social-list-btn">
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank"><i class="icofont-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank"><i class="icofont-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/" target="_blank"><i class="icofont-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.pinterest.com/" target="_blank"><i class="icofont-pinterest"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer-content-list footer-content-item desk-pad-left-70">
+                        <div class="footer-content-title">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul class="footer-details footer-list">
+                            <li><a routerLink="aboutus">About Us</a></li>
+                            <li><a routerLink="comingsoon">News & Blogs</a></li>
+                            <li><a routerLink="comingsoon">Services</a></li>
+                            <li><a routerLink="comingsoon">Universitities</a></li>
+                            <li><a routerLink="comingsoon">Others</a></li>
+                            <li><a routerLink="contactus">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer-content-list footer-content-item desk-pad-left-70">
+                        <div class="footer-content-title">
+                            <h3>Services</h3>
+                        </div>
+                        <ul class="footer-details footer-list">
+                            <li><a href="service-robotic-animation.html">Research & Resources</a></li>
+                            <li><a href="service-predictive-analytics.html">Appllication Assistance</a></li>
+                            <li><a href="service-deep-learning.html">Student Visa Support</a></li>
+                            <li><a href="service-statistical-modeling.html">Campus Transition</a></li>
+                            <li><a href="service-data-mining.html">Acadamic Support</a></li>
+                            <li><a href="service-security-&-surveillance.html">Career Development</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer-content-list footer-content-item desk-pad-left-70">
+                        <div class="footer-content-title">
+                            <h3>Contact</h3>
+                        </div>
+                        <div class="footer-details footer-address">
+                            <div class="footer-address-item">
+                                <div class="footer-address-text">
+                                    <h4>Phone:</h4>
+                                    <p><a href="tel:001-987-654-432">(+X) XXX XXX XXX</a></p>
+                                </div>
+                            </div>
+                            <div class="footer-address-item">
+                                <div class="footer-address-text">
+                                    <h4>Email:</h4>
+                                    <p><a href="mailto:info@tag.com">info@XXXX.com</a></p>
+                                </div>
+                            </div>
+                            <div class="footer-address-item">
+                                <div class="footer-address-text">
+                                    <h4>Address:</h4>
+                                    <p>The Admit Group Unit 317, Vasavi's Sky City, Gachibowli, Hyderabad, India, 500081</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-lower bg-blue position-relative">
+        <div class="container">
+            <div class="footer-copyright-text footer-copyright-text-white">
+                <p>Copyright ©2022 Admit Group. Designed & Developed By <a href="https://rapidconsultinggroup.com/" target="_blank">Rapid</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+
+<!-- Scroll-top -->
+<div class="scroll-top" id="scrolltop">
+    <div class="scroll-top-inner">
+        <i class="icofont-long-arrow-up" (click)="onScroll($event)"></i>
+    </div>
+</div>
+<!-- Scroll-top -->
+
+<!-- Topbar-side-modal -->
+<div class="side-modal-wrapper">
+    <div class="side-modal">
+        <div class="side-modal-header">
+            <div class="side-modal-logo">
+                <a href="index.html"><img src="assets/images/tag logo.png" alt="logo"></a>
+            </div>
+            <div class="side-modal-close">
+                <i class="icofont-close"></i>
+            </div>
+        </div>
+        <div class="side-modal-body">
+            <div class="sidebar-info-content">
+                <h3>Contact Us</h3>
+                <div class="sidebar-info-list">
+                    <div class="sidebar-info-list-item">
+                        <i class="icofont-headphone"></i>
+                        <a href="tel:00321-654-98">+00 000 000 00</a>
+                    </div>
+                    <div class="sidebar-info-list-item">
+                        <i class="icofont-ui-message"></i>
+                        <a href="mailto:info@tag.com">info@tag.com</a>
+                    </div>
+                    <div class="sidebar-info-list-item">
+                        <i class="icofont-paper-plane"></i>
+                        <a href="contact.html">Request For Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-info-content">
+                <h3>Follow Us</h3>
+                <ul class="social-list">
+                    <li>
+                        <a href="https://www.facebook.com/RapidTechservices/" target="_blank"><i class="icofont-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/" target="_blank"><i class="icofont-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/rapidconsulting/" target="_blank"><i class="icofont-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/" target="_blank"><i class="icofont-pinterest"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar-side-modal -->
+
+<!-- Search-overlay -->
+<div class="search-overlay">
+    <div class="search-close">
+        <i class="icofont-close"></i>
+    </div>
+    <div class="search-form-area">
+        <div class="search-area-logo">
+            <a href="index.html">
+                <img src="assets/images/logo-white.png" alt="logo">
+            </a>
+        </div>
+        <form>
+            <div class="form-group search-form-group">
+                <input type="text" placeholder="Search..." class="form-control" autofocus="autofocus">
+                <button>
+                    <i class="icofont-search-1"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Search-overlay -->
