@@ -1,0 +1,123 @@
+<div class="submitapplication">
+    <br>
+    <h3>
+        Do you certify the following?
+    </h3>
+    <form [formGroup]="submitionForm" (submit)="submitted()">
+    <div>
+        <p>
+            I understand that once my application has been submitted it may NOT be altered in any way. I certify that all of the information submitted in the application is my own work, factually true, and honestly presented. I authorize all schools attended to release
+            all requested records and authorize review of my application. I understand that I may be subject to a range of possible disciplinary actions, including admission revocation or expulsion, should the information I certified be false.
+        </p>
+        <div>
+            <mat-radio-group aria-label="radio1" formControlName="information_correctness" required>
+                <mat-radio-button name="currectness" id="yes" value="true">yes</mat-radio-button>
+                <mat-radio-button name="currectness" id="no" value="false">no</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf=" (f.information_correctness.touched || formsubmit) &&f.information_correctness.errors?.required">Please select your option</mat-error>
+        </div>
+        <!-- f.information_correctness.touched || formsubmit) &&  -->
+        
+        <br>
+    </div>
+    <div>
+        <p>
+            I also understand that my submission indicates that I am aware and give my consent that pictures or video in which I am included taken on campus or at various events at which AUM is represented may be used for informational or marketing purposes.
+        </p>
+        <div>
+            <mat-radio-group aria-label="radio1" formControlName="data_usage" required>
+                <mat-radio-button name="" value="true">yes</mat-radio-button>
+                <mat-radio-button value="false">no</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf=" (f.data_usage.touched || formsubmit) &&f.data_usage.errors?.required">Please select your option</mat-error>
+        </div><br>
+    </div>
+    <div>
+        <p>
+            I further understand that my AUM email account created on my behalf will be the official mode of correspondence for the University. This includes all correspondence from the AUM Financial Aid Office related to the awarding and disbursing of Federal Student
+            Aid funding. I understand I may contact the AUM Financial Aid Office in writing if I would like to request an alternative means of correspondence.
+        </p>
+        <div>
+            <mat-radio-group aria-label="radio1" formControlName="email_usage" required>
+                <mat-radio-button value="true">yes</mat-radio-button>
+                <mat-radio-button value="false">no</mat-radio-button>
+                
+            </mat-radio-group>
+            <mat-error *ngIf=" (f.email_usage.touched || formsubmit) &&f.email_usage.errors?.required">Please select your option</mat-error>
+        </div><br>
+    </div>
+
+    <h2>Personal Statement/Disciplinary History</h2>
+    <div>
+        <p>Have you ever been subject to disciplinary action or do you have a disciplinary charge pending by any educational institution for acadamic misconduct?(you do not need to disclose any acadamic dismissal,suspension or probation that was due to poor
+            grades)
+        </p>
+        <div>
+            <mat-radio-group aria-label="radio1" formControlName="acadamic_misconduct" required>
+                <mat-radio-button value="true">yes</mat-radio-button>
+                <mat-radio-button value="false">no</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf=" (f.acadamic_misconduct.touched || formsubmit) &&f.acadamic_misconduct.errors?.required">Please select your option</mat-error>
+        </div><br>
+    </div>
+    <div>
+        <p>Have you ever been subject to disciplinary action or do you currently have disciplinary charge pending by any educational institution for behaviour misconduct?</p>
+        <div>
+            <mat-radio-group aria-label="radio2" formControlName="behaviour_misconduct" required>
+                <mat-radio-button value="true">yes</mat-radio-button>
+                <mat-radio-button value="false">no</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf=" (f.behaviour_misconduct.touched || formsubmit) &&f.behaviour_misconduct.errors?.required">Please select your option</mat-error>
+        </div><br>
+    </div>
+    <div>
+        <p>Have you ever been convicted,or charged with a criminal offance, or are you currently the subject of criminal proceedings?</p>
+        <div>
+            <mat-radio-group aria-label="radio3" formControlName="criminal_offance" required>
+                <mat-radio-button value="true">yes</mat-radio-button>
+                <mat-radio-button value="false">no</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf=" (f.criminal_offance.touched || formsubmit) &&f.criminal_offance.errors?.required">Please select your option</mat-error>
+        </div>
+    </div><br><br>
+    <h2>General Terms</h2>
+    <h2>Signature University Terms</h2>
+    <p>Prospective students and their representative(s) must read these terms and conditions carefully prior to clicking "FINAL SUBMIT" below. Admitted students will receive a written offer letter with details and instructions on accepting the offer and
+        paying the Program deposit. Students are placed in the appropriate program track (each a "Program") at his or her admitting university based on the academic and English language credentials submitted with this application. You acknowledge that
+        there are price disparities between these Programs based on length and course of study, which may include required English language courses. If you are the authorized representative of the student whose name appears on this application, you affirm
+        that you have communicated these possible price disparities to the applying student and his or her family, if necessary, and further communicated that students who accept an offer to study at a particular university agree to be responsible for
+        all costs associated with the Program into which they are placed. You further acknowledge that you, or the student you represent, may be placed in a different Program subject to the results of a required English language test that will be administered
+        upon arrival to campus.
+    </p>
+    <h2>Medical Insurance</h2>
+    <p>You have informed the student that they will be required to purchase medical insurance for the full duration of any on-campus portion of their program upon their arrival in the United States.</p>
+    <h2>Agent Declaration</h2>
+    <p>I have been authorized by the student whose name appears on this application to submit this application. The student is aware of all actions taken by me on his/her behalf in conjunction with the student's application to the universities selected on
+        this online application form.</p>
+    <p>To the best of my knowledge, all information supplied on this form is true, complete, and correct. I have not falsified or intentionally omitted any information, or otherwise interfered with the university's ability to make an informed admission decision.
+        I understand that giving false or incomplete information may lead to penalties, including suspension, fines, inability to receive commission, and/or termination of my relationship with Shorelight, LLC, and may further impact the student's admission
+        and/or visa status.</p>
+    <p>I have fully and accurately informed the student of all relevant information, including costs, program offerings, terms of participation, and other published information, required for the student to make an informed enrollment decision regarding the
+        universities to which he/she has applied.</p>
+    <p>I have communicated to the student that he/she will be responsible for all tuition, fees, and other costs of the program he/she selects.</p>
+    <!-- <input type="checkbox" class="check"> -->
+    <div class="check">
+        <mat-checkbox formControlName="declaration" required>
+        </mat-checkbox>
+        <label>I have read and accept to Signature Terms, Medical Insurance & Agent Declaration</label>
+        <mat-error *ngIf=" (f.declaration.touched || formsubmit) &&f.declaration.errors?.required">Please accept the agreement</mat-error>
+
+    </div>
+    <h2>Signature</h2>
+    <div class="form-group row">
+        <label for="signature" class="col-sm-2 col-form-label">Signature</label>
+        <div class="col-sm-10">
+            <input type="text" style="width: 60%;" class="form-control" formControlName="signature" id="signature" placeholder="type your name as signature" required>
+            <mat-error *ngIf=" (f.signature.touched || formsubmit) && f.signature.errors?.required">Please add your signature</mat-error>
+        </div>
+    </div>
+    <div class="submitbtn">
+        <button mat-raised-button type="submit" class="submit">Submit Application</button>
+    </div>
+</form>
+</div>

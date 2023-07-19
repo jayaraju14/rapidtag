@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div class="valid">
+        <h1>Enter OTP To Continue Agent Registration</h1>
+        <p>To continue agent registration please enter otp sent to the email {{mail | emailMask}}</p><br>
+        
+        <mat-form-field class="example-full-width">
+            <mat-label>Enter OTP</mat-label>
+            <input matInput name="otp" [(ngModel)]="otp">
+          </mat-form-field>
+        <br><br>
+        <!-- <button mat-raised-button class="continue-btn" [routerLink]="['/agent-registerDetails']">Submit</button><br><br> -->
+        <button mat-raised-button class="continue-btn" (click)="validateOTP()">Submit</button><br><br>
+        <!-- <a href="#">use a different email address</a> -->
+        <hr>
+        <h4>Do you want to start a new agent registration? <a href="#" [routerLink]="['/agent-register']">Start new agent registration</a></h4>
+        </div>
+</div>

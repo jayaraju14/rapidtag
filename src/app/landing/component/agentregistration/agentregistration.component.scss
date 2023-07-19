@@ -1,3 +1,87 @@
-.container {
-    margin: 10% 0 0 15%;
+.wrapper {
+    margin: 10% 0 0.2% 5%;
+}
+
+.validate-btn {
+    background-color: #eb7304;
+    color: #212e36;
+}
+
+.validate-btn:hover {
+    background-color: #212e36;
+    color: #fff;
+}
+
+.form-control {
+    width: 90%;
+}
+
+.form-container {
+    // margin-left: 290px;
+    // margin-left: 135px;
+    width: 66%;
+}
+.form-group div{
+    width: 70%;
+}
+
+.form-group {
+    padding-top: 20px;
+    label{
+        width: 150px;
+    }
+}
+form{
+    margin-left: 75px;
+}
+
+h1 {
+    font-size: 45px;
+    color: #eb7304;
+}
+
+.my-custom-snackbar {
+    margin: 0 0 0 0
+}
+
+mat-checkbox {
+    margin-top: 15px;
+}
+
+::ng-deep .cdk-overlay-pane {
+    margin-top: 100px !important;
+}
+
+@media only screen and (max-width: 575px) {
+    .wrapper {
+        margin: 25% 0 0.2% 0;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .form-container {
+        margin-left: 20px;
+    }
+}
+
+::ng-deep .mat-checkbox-layout {
+    white-space: normal !important;
+}
+.regExist{
+margin-top: 35px;
+}
+
+#pluswrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    top: 0;
+    right: 0;
+}
+
+.plus {
+    display: flex;
+    margin: 0 auto;
 }

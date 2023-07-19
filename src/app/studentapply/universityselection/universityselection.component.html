@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <h2 style="padding-top: 10px;">Level of Education</h2>
+  <div>
+    <button mat-raised-button color="primary" id="ugBtn" (click)="getUniversity('undergraduate')">Undergraduate</button>
+    <button mat-raised-button color="primary" id="graduateBtn" (click)="getUniversity('graduate')">Graduate</button>
+  </div>
+  <h2 style="padding-top: 10px;">University selection</h2>
+  <p>Select the university depending on student priority</p>
+  <form [formGroup]="uniForm" (submit)="submitted()">
+    <div>
+      <div class="row">
+        <div class="col-md-3" *ngFor="let uni of data; let i = index">
+          <div formArrayName="universities" >
+            <div class="card" [formGroupName]="i">
+              <div>
+                <h1>{{ uni.name }}</h1>
+              </div>
+              <div>
+                <!-- <input type="text" formControlName="name" id="fname" name="fname" [value]=uni.name> -->
+                <mat-form-field>
+                  <mat-label>Select Intake</mat-label>
+                  <mat-select formControlName="intake" name="levelEducation">
+                    <mat-option *ngFor="let intake of uni.graduation.intakes" [value]="intake">{{ intake }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf="graduate">
+                  <mat-label>Select Course</mat-label>
+                  <mat-select formControlName="course" name="levelEducation" panelClass="no-icons-select">
+                    <mat-option *ngFor="let course of uni.graduation.courses; let j = index" [value]="course">{{ course }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf="undergraduate">
+                  <mat-label>Select Course</mat-label>
+                  <mat-select formControlName="course" name="levelEducation">
+                    <mat-option *ngFor="let course of uni.undergraduation.courses; let j = index" [value]="course">{{ course }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button mat-raised-button class="save" type="submit">Next</button>
+    </div>
+  </form>
+</div>

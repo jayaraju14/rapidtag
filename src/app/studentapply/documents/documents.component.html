@@ -1,0 +1,100 @@
+<div class="wrapper">
+    <div class="container">
+        <div>
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle value="required">Required docs</mat-button-toggle>
+                <mat-button-toggle value="Issued">Issued docs</mat-button-toggle>
+            </mat-button-toggle-group>
+            <div>
+                <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <ng-container matColumnDef="sub">
+                        <th mat-header-cell *matHeaderCellDef> </th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-icon [ngStyle]="element.status?{'color': 'green'} : {'color': 'red'}">check_circle</mat-icon>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="type">
+                        <th mat-header-cell *matHeaderCellDef> Document type </th>
+                        <td mat-cell *matCellDef="let element"> {{element.type}}<br/><span>{{element.sub}}</span> </td>
+                    </ng-container>
+                    <ng-container matColumnDef="status">
+                        <th mat-header-cell *matHeaderCellDef> status </th>
+                        <td mat-cell *matCellDef="let element">
+                            <p class="fontstyle2" *ngIf="element.status">
+                                Complted
+                            </p>
+                            <p class="fontstyle2" *ngIf="!element.status">
+                                Not reviewd
+                            </p>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="upload">
+                        <th mat-header-cell *matHeaderCellDef> Upload document </th>
+                        <td mat-cell *matCellDef="let element">
+                            <input style="display: none;" id="input-file-id" multiple type="file" (change)="selectFile($event)" />
+                            <label mat-label class="uploadlabel" for="input-file-id">{{fileName}}</label>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table> -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Document type</th>
+                            <th>status</th>
+                            <th>Upload document</th>
+                            <!-- <th>Profile Picture</th> -->
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of documentData">
+                            <td>
+                                <mat-icon *ngIf="(user.field === 'resume' && oldData?.resume_doc_status)||(user.field === 'sop' && oldData?.sop_doc_status)
+                                ||(user.field === 'lor_3' && oldData?.lor_3_doc_status)||(user.field === 'lor_2' && oldData?.lor_2_doc_status)||(user.field === 'lor_1' && oldData?.lor_1_doc_status)
+                                ||(user.field === 'gre' && oldData?.gre_doc_status)||(user.field === 'transcript' && oldData?.transcript_doc_status)||(user.field === 'cmm' && oldData?.cmm_doc_status) 
+                                ||(user.field === 'degree' &&( oldData?.bacherlor_doc_status ||oldData?.bacherlor_doc_status))
+                                ||user.field === 'eps' || user.field === 'passport'; else notuploaded " class="circular-icon-loading" style="font-size: 24px; background-color: green;color:#ffff;">check</mat-icon>
+                                <ng-template #notuploaded>
+                                    <mat-icon class="circular-icon-loading" style="font-size: 24px; color:#ffff;">refresh</mat-icon>
+                                </ng-template>
+                                
+                                
+                            </td>
+                            <td>{{user.name}}<br/><span>{{user.sub}}</span></td>
+                            <td>
+                                <!--     {{ user.status }} -->
+                                <p class="fontstyle2" *ngIf="(user.field === 'resume' && oldData?.resume_doc_status)||(user.field === 'sop' && oldData?.sop_doc_status)
+                                ||(user.field === 'lor_3' && oldData?.lor_3_doc_status)||(user.field === 'lor_2' && oldData?.lor_2_doc_status)||(user.field === 'lor_1' && oldData?.lor_1_doc_status)
+                                ||(user.field === 'gre' && oldData?.gre_doc_status)||(user.field === 'transcript' && oldData?.transcript_doc_status)||(user.field === 'cmm' && oldData?.cmm_doc_status) 
+                                ||(user.field === 'degree' &&( oldData?.bacherlor_doc_status ||oldData?.bacherlor_doc_status))
+                                ||user.field === 'eps' || user.field === 'passport'; else notupload ">
+                                    Uploaded
+                                </p>
+                                <ng-template #notupload>
+                                <p class="fontstyle2">
+                                    Not uploaded
+                                </p>
+                            </ng-template>
+                            </td>
+                            <!-- <td>{{ user.username }}</td> -->
+                            <td>
+                                <!-- <img *ngIf="user.imageUrl" style="width: 28px;" [src]="user.imageUrl" alt="document" height="50"> -->
+                            </td>
+                            <td>
+                                <button id="btnUpload" (click)="fileInput.click()" mat-fab color="primary" for="input-file-id" aria-label="Upload files">
+                                    <mat-icon>upload</mat-icon>
+                                  </button>
+                                <input type="file" #fileInput style="display: none;" id="input-file-id" accept="application/pdf" (change)="uploadPdf($event, user)">
+                                <!-- <button (click)="onUpload(user)">Upload</button> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <button mat-raised-button class="save" (click)="nextstep()">Next</button>
+</div>

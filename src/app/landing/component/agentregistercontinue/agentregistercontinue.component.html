@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div id="pluswrap" *ngIf="loader">
+    <div class="plus">
+        <mat-spinner></mat-spinner>
+    </div>
+  </div>
+    <div class="valid">
+        <h1>Continue Agent Registration</h1>
+        <p>Please enter your Email id to continue Registration</p><br>
+        <!-- <input type="text"/><br><br> -->
+        <mat-form-field class="example-full-width">
+            <mat-label>Enter registered email</mat-label>
+            <input matInput name="email" [(ngModel)]="email">
+          </mat-form-field>
+          <br><br>
+          <!-- [routerLink]="['/agent-otp-verify']" -->
+        <button mat-raised-button class="continue-btn" (click)="sendOTP()">Send OTP</button><br><br>
+        <!-- <a href="#">use a different email address</a> -->
+        <hr>
+        <h4>Do you want to start a new agent registration? <a href="#" [routerLink]="['/agent-register']">Start new agent registration</a></h4>
+        </div>
+</div>

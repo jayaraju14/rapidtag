@@ -1,0 +1,243 @@
+<!-- <button mat-raised-button class="apply" color="primary" routerLink="/apply-student">&nbsp;Apply Now</button> -->
+
+<div class="h-screen flex-grow-1 overflow-y-lg-auto">
+  <!-- Main -->  
+  <div class="row">
+  <div class="col-xl-9 col-sm-6 col-12">
+  <main class="py-6 bg-surface-secondary">
+      <div class="container-fluid">
+          <!-- Card stats -->
+          <div class="row cards g-6 mb-6">
+                <!-- <div class="col-xl-3 col-sm-6 col-12">
+                  <div class="card shadow border-0">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2"> All Students</span> <span class="h3 font-bold mb-0">{{stuCount}}</span> </div>
+                              <div class="col-auto">
+                                  <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle"> <i class="bi bi-people"></i> </div>
+                              </div>
+                          </div>
+                          <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-success text-success me-2"> <i class="bi bi-arrow-up me-1"></i>+7 </span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                      </div>
+                  </div>
+              </div> -->
+              <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card shadow border-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Students</span> <span class="h3 font-bold mb-0">{{stuCount}}</span> </div>
+                            <div class="col-auto">
+                                <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle"> <i class="bi bi-people"></i> </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-success text-success me-2"> <i class="bi bi-arrow-up me-1"></i>+7 </span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                    </div>
+                </div>
+            </div>
+              <!-- <div class="col-xl-3 col-sm-6 col-12">
+                  <div class="card shadow border-0">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Commission</span> <span class="h3 font-bold mb-0">$45000</span> </div>
+                              <div class="col-auto">
+                                  <div class="icon icon-shape bg-primary text-white text-lg rounded-circle"> <i class="bi bi-credit-card"></i> </div>
+                              </div>
+                          </div>
+                          <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-success text-success me-2"> <i class="bi bi-arrow-up me-1"></i>+$14000</span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                      </div>
+                  </div>
+              </div> -->
+              <div class="col-xl-3 col-sm-6 col-12">
+                  <div class="card shadow border-0">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Counselors</span> <span class="h3 font-bold mb-0">03</span> </div>
+                              <div class="col-auto">
+                                  <div class="icon icon-shape bg-info text-white text-lg rounded-circle"> <i class="bi bi-people"></i> </div>
+                              </div>
+                          </div>
+                          <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-danger text-danger me-2"> <i class="bi bi-arrow-down me-1"></i>-2 </span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 col-12">
+                  <div class="card shadow border-0">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Conversion Rate</span> <span class="h3 font-bold mb-0">12.8%</span> </div>
+                              <div class="col-auto">
+                                  <div class="icon icon-shape bg-warning text-white text-lg rounded-circle"> <i class="bi bi-bar-chart"></i> </div>
+                              </div>
+                          </div>
+                          <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-success text-success me-2"> <i class="bi bi-arrow-up me-1"></i>+1.22% </span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Chart Performance started -->
+          <div class="row g-6 mb-6">
+            <div class="col-xl-7 col-sm-6 col-12">
+                <div style="display: block; width: 400px">
+                    <canvas id="canvas" height="320">{{ chart }}</canvas>
+                  </div>
+                
+                <!-- <div>
+                    <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height: '360px'}"></canvasjs-chart>    
+                </div>                      -->
+                <!-- <div class="card shadow border-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Students</span> <span class="h3 font-bold mb-0">21324</span> </div>
+                            <div class="col-auto">
+                                <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle"> <i class="bi bi-people"></i> </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-success text-success me-2"> <i class="bi bi-arrow-up me-1"></i>+2031 </span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-xl-5 col-sm-6 col-12">
+                <div style="display: block; width: 300px; margin-top: 50px;">
+                    <canvas id="canvas1" height="320">{{ chart1 }}</canvas>
+                  </div>
+                <!-- <div>
+                    <canvasjs-chart [options]="chartOptions1" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
+                </div> -->
+                <!-- <div class="card shadow border-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Conversion Rate</span> <span class="h3 font-bold mb-0">12.8%</span> </div>
+                            <div class="col-auto">
+                                <div class="icon icon-shape bg-warning text-white text-lg rounded-circle"> <i class="bi bi-bar-chart"></i> </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-success text-success me-2"> <i class="bi bi-arrow-up me-1"></i>-1.22% </span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <!-- Chart Performance ended -->
+          <div class="card shadow border-0 mb-7">
+              <div class="card-header">
+                  <h5 class="mb-0">Activity Feed</h5>
+              </div>
+              <div class="table-responsive">
+                  <table class="table table-hover table-nowrap">
+                      <thead class="thead-light">
+                          <tr>
+                              <th scope="col">Name</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Phone Number</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Action Needed</th>
+                              <th></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td> <img alt="..." src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Robert Fox </a> </td>
+                              <td> Feb 15, 2021 </td>
+                              <td> 6565465454 </td>
+                              <td> Submitted </td>
+                              <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Scheduled </span> </td>
+                              <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                          </tr>
+                          <tr>
+                              <td> <img alt="..." src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Darlene Robertson </a> </td>
+                              <td> Apr 15, 2021 </td>
+                              <td> 6565465454 </td>
+                              <td> Submitted </td>
+                              <td> <span class="badge badge-lg badge-dot"> <i class="bg-warning"></i>Postponed </span> </td>
+                              <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                          </tr>
+                          <tr>
+                              <td> <img alt="..." src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Theresa Webb </a> </td>
+                              <td> Mar 20, 2021 </td>
+                              <td> 6565465454 </td>
+                              <td> Submitted </td>
+                              <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Scheduled </span> </td>
+                              <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                          </tr>
+                          <tr>
+                              <td> <img alt="..." src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Kristin Watson </a> </td>
+                              <td> Feb 15, 2021 </td>
+                              <td> 6565465454 </td>
+                              <td> Submitted </td>
+                              <td> <span class="badge badge-lg badge-dot"> <i class="bg-dark"></i>Not discussed </span> </td>
+                              <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                          </tr>
+                          <tr>
+                              <td> <img alt="..." src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Cody Fisher </a> </td>
+                              <td> Apr 10, 2021 </td>
+                              <td> 6565465454 </td>
+                              <td> Submitted </td>
+                              <td> <span class="badge badge-lg badge-dot"> <i class="bg-danger"></i>Canceled </span> </td>
+                              <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                          </tr>
+                          <tr>
+                              <td> <img alt="..." src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Robert Fox </a> </td>
+                              <td> Feb 15, 2021 </td>
+                              <td> 6565465454 </td>
+                              <td> Submitted </td>
+                              <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Scheduled </span> </td>
+                              <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                          </tr>
+                          <tr>
+                              <td> <img alt="..." src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Darlene Robertson </a> </td>
+                              <td> Apr 15, 2021 </td>
+                              <td> 6565465454 </td>
+                              <td> Submitted </td>
+                              <td> <span class="badge badge-lg badge-dot"> <i class="bg-warning"></i>Postponed </span> </td>
+                              <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                          </tr>
+                          <tr>
+                              <td> <img alt="..." src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Theresa Webb </a> </td>
+                              <td> Mar 20, 2021 </td>
+                              <td> 6565465454 </td>
+                              <td> Submitted </td>
+                              <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Scheduled </span> </td>
+                              <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                          </tr>
+                          <tr>
+                              <td> <img alt="..." src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Kristin Watson </a> </td>
+                              <td> Feb 15, 2021 </td>
+                              <td> 6565465454 </td>
+                              <td> Submitted </td>
+                              <td> <span class="badge badge-lg badge-dot"> <i class="bg-dark"></i>Not discussed </span> </td>
+                              <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                          </tr>
+                          <tr>
+                              <td> <img alt="..." src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Cody Fisher </a> </td>
+                              <td> Apr 10, 2021 </td>
+                              <td> 6565465454 </td>
+                              <td> Submitted </td>
+                              <td> <span class="badge badge-lg badge-dot"> <i class="bg-danger"></i>Canceled </span> </td>
+                              <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <div class="card-footer border-0 py-5"> <span class="text-muted text-sm">Showing 10 items out of 250 results found</span> </div>
+          </div>
+      </div>
+  </main>
+</div>
+<div class="col-xl-3 col-sm-6 col-12">
+<!-- <video width="400" height="600" controls>
+    <source src="https://youtu.be/XvXsAJCfstQ" type="video/mp4">
+    <source src="https://youtu.be/XvXsAJCfstQ" type="video/ogg">
+    Your browser does not support HTML video.
+  </video> -->
+  <div>
+  <iframe width="100%" height="230" src="https://www.youtube.com/embed/XvXsAJCfstQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div>
+    <ul style="list-style-type: none;margin-top:50px">
+        <li>Illinois State University is pleased to offer On the Spot Admissions Decision appointments for prospective undergraduate transfer students who have completed more than 24 college credit hours at the time of application.</li><hr>
+        <li>Schedule an On-the-Spot Admissions appointment or visit us during office hours to submit your application for the Summer and Fall 2023!</li><hr>
+        <li>ARKANSAS ROOTS FESTIVAL <hr> The annual Arkansas Roots Music Festival is making a move this year. The event will be held on Saturday, April 1, at the Johnny Cash Boyhood Home, an Arkansas State Heritage Site at Dyess. Live music begins at noon, ending at 5 p.m.</li><hr>
+    </ul>
+</div>
+    </div>
+
+</div></div>

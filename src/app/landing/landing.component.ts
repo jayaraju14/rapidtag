@@ -10,7 +10,9 @@ export class LandingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.onScrol()
   }
+
   onScroll(event:any) {
     // window.scroll(0,0);
  
@@ -24,5 +26,13 @@ export class LandingComponent implements OnInit {
      //or document.querySelector('body').scrollTo(0,0)
      
  }
-
+onScrol() {
+    // window.scroll(0,0);
+ 
+    window.scroll({ 
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+     });
+    }
 }

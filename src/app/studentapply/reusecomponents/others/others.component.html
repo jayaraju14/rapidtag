@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <div class="modelheader">
+        <a>Back</a>
+        <button mat-raised-button color="primary" style="float: right;">Save</button>
+    </div>
+    <h2 style="text-align: center;">Other Score Reporting</h2>
+    <div class="modelcontent">
+        <mat-card class="calender">
+            <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+        </mat-card>
+        <div class="score">
+            <mat-form-field>
+                <mat-label>Listening</mat-label>
+                <input matInput placeholder="Listening score" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Reading</mat-label>
+                <input matInput placeholder="Reading score" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Writing</mat-label>
+                <input matInput placeholder="Writing score" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Speaking</mat-label>
+                <input matInput placeholder="Speaking score" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Overall</mat-label>
+                <input matInput placeholder="Overall score" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+        </div>
+        <div>
+            <!-- <mat-form-field>
+                <mat-label>Favorite food</mat-label>
+                <mat-select name="food">
+                    <mat-option value="select">select</mat-option>
+                </mat-select>
+            </mat-form-field> -->
+            <mat-form-field>
+                <mat-label>Registration ID</mat-label>
+                <input matInput placeholder="Enter Registration ID" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+        </div>
+    </div>
+    <button type="button" mat-raised-button (click)="closeDialog()">Next</button>
+</div>

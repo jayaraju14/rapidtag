@@ -1,0 +1,43 @@
+<div class="sidenav">
+    <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg" id="navbarVertical">
+        <div class="container-fluid">
+            <!-- Toggler --> <button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <!-- Brand --> <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0 logo">Welcome {{empFirst}}</a> <!-- User menu (mobile) -->
+            <div class="navbar-user d-lg-none">
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <!-- Toggle --> <a href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar-parent-child"> <img alt="Image Placeholder" src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar- rounded-circle"> <span class="avatar-child avatar-badge bg-success"></span> </div>
+                    </a> <!-- Menu -->
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="sidebarAvatar"> <a href="#" class="dropdown-item">Profile</a> <a href="#" class="dropdown-item">Settings</a> <a href="#" class="dropdown-item">Billing</a>
+                        <hr class="dropdown-divider"> <a href="#" class="dropdown-item">Logout</a> </div>
+                </div>
+            </div> <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidebarCollapse">
+                <!-- Navigation -->
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" routerLink="dashboard"> <i class="bi bi-house-fill"></i> Dashboard </a> </li>
+                    <!-- <li class="nav-item"> <a class="nav-link" routerLink="allstudents"> <i class="bi bi-people-fill"></i> All Students </a> </li> -->
+                    <li class="nav-item"> <a class="nav-link" routerLink="mystudents"> <i class="bi bi-person-fill"></i> My Students </a> </li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="messages"> <i class="bi bi-chat-fill"></i> Messages <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">6</span> </a> </li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="universities"> <i class="icon-th-list"></i> Universities </a> </li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="team"> <i class="bi bi-diagram-2-fill"></i> Internal Team </a> </li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="applications"> <i class="bi bi-window-stack"></i> Applications </a> </li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="financial"> <i class="bi bi-credit-card-fill"></i> Financial </a> </li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="support"> <i class="bi bi-headset"></i> Support Ticket</a> </li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="agents"> <i class="bi bi-people-fill"></i> Agents</a> </li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="adminstration"> <i class="bi bi-shield-fill-check"></i> Administration </a> </li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="settings"> <i class="bi bi-gear-fill"></i> Settings </a> </li>
+
+
+                </ul> <!-- Divider -->
+                <hr class="navbar-divider my-5 opacity-20"> <!-- Navigation -->
+                 <!-- Push content down -->
+                <div class="mt-auto"></div> <!-- User (md) -->
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" href="#"> <i class="bi bi-person-square"></i> Account </a> </li>
+                    <li class="nav-item"> <a class="nav-link"  (click)="logout()"> <i class="bi bi-box-arrow-left"></i> Logout </a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>

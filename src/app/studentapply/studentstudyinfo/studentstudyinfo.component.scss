@@ -1,0 +1,18 @@
+.wrapper {
+    margin-top: 10%;
+}
+
+.title {
+    text-align: center;
+}
+
+.h2 .h1 {
+    font-family: IcoFont;
+    color: #212e36;
+}
+
+@media only screen and (max-width: 575px) {
+    .wrapper {
+        margin-top: 100px;
+    }
+}

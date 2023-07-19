@@ -1,0 +1,322 @@
+<!-- <div class="wrapper">
+    <h1>Student Information</h1>    
+    <div class="row" *ngFor="let data of studentData">
+        <div class="col-md-4">
+        
+        <h2>{{data.student_details['Given Name(s)']}}</h2>
+        <div class="studata">
+            <table>
+                <tr>
+                    <td>Location:</td>
+                    <td>{{data.student_details.city}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender
+                    </td>
+                    <td>{{data.student_details.Sex}}</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>{{data.student_details.address}},{{data.student_details.address2}}</td>
+                </tr>
+                <tr>
+                    <td>Date of birth:</td>
+                    <td>{{data.student_details['Date of Birth'] | date}}</td>
+                </tr>
+                <tr>
+                    <td>Contact:</td>
+                    <td>{{data.student_details['contact']}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{data.student_details['email']}}</td>
+                </tr>
+            </table>
+            <h2>Application Information</h2>
+            <div>
+                <label><b>Created by</b></label>
+                <p>jay</p>
+            </div>
+            <div>
+                <label><b>Application Owner</b></label>
+                <p>jay</p>
+            </div>
+            <div>
+                <label><b>Assigned Date</b></label>
+                <p>jay</p>
+            </div>
+            <div>
+                <label><b>Deal Type</b></label>
+                <p>jay</p>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-8">
+        <div class="row">
+            <div class="col">
+                <label><b>Last Activity</b></label>
+                <p>21-02-2023</p>
+            </div>
+            <div class="col">
+                <label><b>Organization</b></label>
+                <p>Rapid</p>
+            </div>
+            <div class="col">
+                <label><b>Branch</b></label>
+                <p>Hyderbad</p>
+            </div>
+        </div>   
+        </div>
+    </div>
+</div>
+ -->
+
+ <!-- Student Profile -->
+ <div *ngFor="let data of studentData">
+<div class="student-profile py-4">
+    <div class="container" >
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">First Name</th>
+                  <td width="2%">:</td>
+                  <td>{{data.student_details['Given Name(s)']}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Last Name</th>
+                  <td width="2%">:</td>
+                  <td>{{data.student_details['Surname']}}</td>
+                </tr>
+                <tr>
+                    <th width="30%">Date of birth</th>
+                    <td width="2%">:</td>
+                    <td>{{data.student_details['Date of Birth'] | date}}</td>
+                  </tr>
+                <tr>
+                  <th width="30%">Father/ guardian</th>
+                  <td width="2%">:</td>
+                  <td>{{data.student_details['Father / Legal Guardian']}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Mother</th>
+                  <td width="2%">:</td>
+                  <td>{{data.student_details['Mother']}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Address</th>
+                  <td width="2%">:</td>
+                  <td>{{data.student_details['Address']}}</td>
+                </tr>
+                <tr>
+                    <th width="30%">Email</th>
+                    <td width="2%">:</td>
+                    <td>{{data.student_details['email']}}</td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Contact</th>
+                    <td width="2%">:</td>
+                    <td>{{data.student_details['contact']}}</td>
+                  </tr>
+              </table>
+
+            </div>
+          </div>
+        </div>
+        <!-- <div  class="col-lg-4">
+            show uploaded pdf here
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="student-profile py-4">
+    <div class="container" >
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Passport Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">Passport No</th>
+                  <td width="2%">:</td>
+                  <td>{{data.student_details['Passport No']}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Place of Birth</th>
+                  <td width="2%">:</td>
+                  <td>{{data.student_details['Place of Birth']}}</td>
+                </tr>
+                <tr>
+                    <th width="30%">Place of issue</th>
+                    <td width="2%">:</td>
+                    <td>{{data.student_details['Place of issue']}}</td>
+                  </tr>
+                <tr>
+                  <th width="30%">Date of Issue</th>
+                  <td width="2%">:</td>
+                  <td>{{data.student_details['Date of Issue']}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Date of Expiry</th>
+                  <td width="2%">:</td>
+                  <td>{{data.student_details['Date of Expiry']}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Nationality</th>
+                  <td width="2%">:</td>
+                  <td>{{data.student_details['Nationality']}}</td>
+                </tr>
+                <!-- <tr>
+                    <th width="30%">Email</th>
+                    <td width="2%">:</td>
+                    <td>{{data.student_details['email']}}</td>
+                  </tr> -->
+                  <!-- <tr>
+                    <th width="30%">Contact</th>
+                    <td width="2%">:</td>
+                    <td>{{data.student_details['contact']}}</td>
+                  </tr> -->
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="student-profile py-4">
+    <div class="container" >
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Education Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                
+                <tr>
+                    <th width="30%">English profficincy </th>
+                    <td width="2%">:</td>
+                    <td>{{data.education_details['english_prof']}}</td>
+                  </tr>
+                <ng-container [ngSwitch]="data.education_details['english_prof']">
+                    <ng-container *ngSwitchCase="'ielts'">
+                    <tr *ngFor="let university of data.education_details.ielts_details | keyvalue">
+                            <th width="30%">{{ university.key }}</th>
+                            <td width="2%">:</td>
+                            <td> {{ university.value }}</td>
+                    </tr>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'duolingo'">
+                      <tr *ngFor="let university of data.education_details.duolingo_details | keyvalue">
+                              <th width="30%">{{ university.key }}</th>
+                              <td width="2%">:</td>
+                              <td> {{ university.value }}</td>
+                      </tr>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'pte'">
+                        <tr *ngFor="let university of data.education_details.pte_details | keyvalue">
+                                <th width="30%">{{ university.key }}</th>
+                                <td width="2%">:</td>
+                                <td> {{ university.value }}</td>
+                        </tr>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'toefl'">
+                          <tr *ngFor="let university of data.education_details.toefl_details | keyvalue">
+                                  <th width="30%">{{ university.key }}</th>
+                                  <td width="2%">:</td>
+                                  <td> {{ university.value }}</td>
+                          </tr>
+                          </ng-container>
+                </ng-container>
+              
+                <ng-container *ngIf="data.education_details['gre_score_hold']=='yes'">
+                  <tr><th style="text-align: end;font-size: 2em;">GRE</th></tr>
+                 
+                  <tr *ngFor="let university of data.education_details.gre_details | keyvalue">
+                          <th width="30%">{{ university.key }}</th>
+                          <td width="2%">:</td>
+                          <td> {{ university.value }}</td>
+                  </tr>
+                  </ng-container>
+              <ng-container [ngSwitch]="data.education_details['education_level']">
+                <tr><th style="text-align: end;font-size: 2em;">Education</th></tr>
+                <tr>
+                  <th width="30%">graduation type</th>
+                  <td width="2%">:</td>
+                  <td>{{data.education_details['education_level']}}</td>
+                </tr>
+                <ng-container *ngSwitchCase="'master'">
+                <tr *ngFor="let university of data.education_details.master | keyvalue">
+                        <th width="30%">{{ university.key }}</th>
+                        <td width="2%">:</td>
+                        <td> {{ university.value }}</td>
+                </tr>
+                </ng-container>
+                <ng-container *ngSwitchCase="'bacherlor'">
+                  <tr *ngFor="let university of data.education_details.bacherlor | keyvalue">
+                          <th width="30%">{{ university.key }}</th>
+                          <td width="2%">:</td>
+                          <td> {{ formatUniversityValue(university.value) }} </td>
+                  </tr>
+                  </ng-container>
+            </ng-container>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="student-profile py-4">
+    <div class="container" >
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>University Selection</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                
+                <tr>
+                    <th width="30%">Level of University</th>
+                    <td width="2%">:</td>
+                    <td>{{data.university_details['selected_level_of_univ_education']}}</td>
+                  </tr> 
+                    <tr>
+                            <td width="100%">
+                            <table *ngFor="let university of data.university_details.university_details">
+                              <tr>
+                              <th>name</th>
+                              <th>intake</th>
+                              <th>course</th>
+                            </tr>
+                            <tr>
+                              <td>{{ university.name }}</td>
+                              <td>{{ university.intake }}</td>
+                              <td>{{ university.course }}</td>
+                            </tr>
+                            </table>
+                          </td>
+                    </tr>
+                  
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

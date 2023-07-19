@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <h1>Universities</h1>
+    <!-- <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input matInput (keyup)="applyFilter($event)">
+    </mat-form-field> -->
+    <button class="addUni" mat-raised-button color="primary">Add University</button>
+    <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Column definitions -->
+        <ng-container matColumnDef="University_Name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> University Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.University_Name}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="University_Code">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> University Code </th>
+            <td mat-cell *matCellDef="let element"> {{element.University_Code}} </td>
+        </ng-container>
+        <ng-container matColumnDef="TAG_Comm">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Commission to TAG </th>
+            <td mat-cell *matCellDef="let element"> {{element.TAG_Comm}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Agent_Comm">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Commission to Agent </th>
+            <td mat-cell *matCellDef="let element"> {{element.Agent_Comm}} </td>
+        </ng-container>
+        <ng-container matColumnDef="BDE_Comm">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> BDE Commission </th>
+            <td mat-cell *matCellDef="let element"> {{element.BDE_Comm}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Application_Comm">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Application Commission </th>
+            <td mat-cell *matCellDef="let element"> {{element.Application_Comm}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Gross_Profit">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Gross Profit </th>
+            <td mat-cell *matCellDef="let element"> {{element.Gross_Profit}} </td>
+        </ng-container>
+        <!-- <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button (click)="edit(element)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+            </td>
+        </ng-container> -->
+        <!-- Table rows -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+    </div>
+    

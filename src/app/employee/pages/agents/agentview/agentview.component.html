@@ -1,0 +1,607 @@
+<div id="stepper">
+
+    <!--  linear #stepper -->
+    <mat-stepper class="example-stepper">
+        <!-- label="Company details" -->
+        <mat-step [stepControl]="companyDetailsForm">
+            <form [formGroup]="companyDetailsForm" class="form">
+                <ng-template matStepLabel>Company details</ng-template>
+                <h1 color="primary" headline-1>Company details</h1><br>
+                <!-- <p>All fields are mandatory unless stated as 'optional'.</p> -->
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Company name</mat-label>
+                    <input matInput placeholder="Please enter your companay name" formControlName="companyname" required>
+                    <mat-error *ngIf="f.companyname.errors?.required">Please enter company name</mat-error>
+                </mat-form-field> -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Doing business as</mat-label>
+                    <input matInput placeholder="Business description" formControlName="Doing_Bussiness_as">
+                    <!-- <mat-error *ngIf="f.Doing_Business_as.errors?.required">Ple</mat-error> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Address line 1</mat-label>
+                    <input matInput placeholder="Address line 1" formControlName="Address_Line_1" required>
+                    <mat-error *ngIf="(f.Address_Line_1?.touched || companydetailsSubmit) && f.Address_Line_1.errors?.required">Please fill your address</mat-error>
+
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Address line 2</mat-label>
+                    <input matInput placeholder="Address line 2" formControlName="Address_Line_2">
+                    <!-- <mat-error *ngIf="f.Address_Line_2.errors?.required">Please enter your address</mat-error> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="city" formControlName="City" required>
+                    <mat-error *ngIf="(f.City?.touched || companydetailsSubmit) && f.City.errors?.required">Please enter your city name</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>State</mat-label>
+                    <!-- <input matInput placeholder="State" formControlName="State" required> -->
+                    <mat-select formControlName="State">
+                        <mat-option *ngFor="let state of states" [value]="state" required>
+                            {{state}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="(f.State?.touched || companydetailsSubmit) && f.State.errors?.required">Please enter your state name</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <input matInput placeholder="country" [readonly]=true formControlName="Country">
+                    <!-- <mat-error *ngIf="f.Country.errors?.required">Please enter your country name</mat-error> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Postal / ZIP Code</mat-label>
+                    <input matInput placeholder="Zipcode" formControlName="pincode" required>
+                    <mat-error *ngIf="(f.pincode?.touched || companydetailsSubmit) && f.pincode.errors?.required">Please enter your zip/postal code</mat-error>
+                    <mat-error *ngIf="f.pincode.errors?.pattern">Please enter valid pincode</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Website</mat-label>
+                    <input matInput placeholder="www.webaddress.com" formControlName="Website" [pattern]="websitevalid" required>
+                    <mat-error *ngIf="(f.Website?.touched || companydetailsSubmit) && f.Website.errors?.required">Please enter website address</mat-error>
+                    <mat-error *ngIf="f.Website.errors?.pattern">Please enter valid web address</mat-error>
+                </mat-form-field>
+                <mat-form-field class="phone">
+                    <mat-label>Direct telephone number</mat-label>
+                    <input matInput formControlName="company_phone_number" ng2TelInput [ng2TelInputOptions]="{initialCountry: 'in'}" (countryChange)="onCountryChange($event)" required>
+                    <mat-error *ngIf="(f.company_phone_number?.touched || companydetailsSubmit) && f.company_phone_number?.errors?.required">Please enter valid telephone number</mat-error>
+                    <mat-error *ngIf="f.company_phone_number?.errors?.pattern">Please enter 10 digit mobile number</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Company email address</mat-label>
+                    <input matInput placeholder="name@email.com" formControlName="Company_email_address" [pattern]="mailvalid" required>
+                    <mat-error *ngIf="(f.Company_email_address?.touched || companydetailsSubmit) && f.Company_email_address.errors?.required">Please enter email id</mat-error>
+                    <!-- <mat-error *ngIf="f.Company_email_address.errors?.pattern">Please enter valid email id</mat-error> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Company LinkedIn page</mat-label>
+                    <input matInput placeholder="Company LinkedIn" formControlName="Linked_IN">
+                    <mat-error *ngIf="(f.Linked_IN?.touched || companydetailsSubmit) && f.Linked_IN.errors?.required">Please enter company linkedin page address</mat-error>
+                    <mat-error *ngIf="f.Linked_IN.errors?.pattern">Please enter valid linkedin URL </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Company twitter page</mat-label>
+                    <input matInput placeholder="Company twitter" formControlName="Twitter">
+                    <mat-error *ngIf="(f.Twitter?.touched || companydetailsSubmit) && f.Twitter.errors?.required">Please enter company twitter page address</mat-error>
+                    <mat-error *ngIf="f.Twitter.errors?.pattern">Please enter valid twitter URL </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Company facebook page</mat-label>
+                    <input matInput placeholder="Company facebook" formControlName="FB_page">
+                    <mat-error *ngIf="(f.FB_page?.touched || companydetailsSubmit) && f.FB_page.errors?.required">Please enter company facebook page address</mat-error>
+                    <mat-error *ngIf="f.FB_page.errors?.pattern">Please enter valid facebook URL </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Company Instagram page</mat-label>
+                    <input matInput placeholder="Company Instagram" formControlName="Instagram">
+                    <mat-error *ngIf="(f.Instagram?.touched || companydetailsSubmit) && f.Instagram.errors?.required">Please enter comapany Instagram page address</mat-error>
+                    <mat-error *ngIf="f.Instagram.errors?.pattern">Please enter valid Instagram URL </mat-error>
+                </mat-form-field>
+
+                <div>
+                    <button type="submit" mat-button>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <!-- form two start -->
+        <mat-step [stepControl]="companyMainContactForm" label="Main contact details">
+            <form [formGroup]="companyMainContactForm">
+                <h1 color="primary" headline-1>Main contact details</h1><br>
+                <!-- <p>All fields are mandatory unless there is no '*'.</p> -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <mat-select formControlName="Title">
+                        <mat-option *ngFor="let title of nameTitle" [value]="title.value" required>
+                            {{title.value}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="(s.Title?.touched || maincontactDetailsSubmit) && s.Title.errors?.required">Select your title</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="enter your firstname" formControlName="First_Name" required>
+                    <mat-error *ngIf="(s.First_Name?.touched || maincontactDetailsSubmit) && s.First_Name.errors?.required">Plese fill your firstname</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="enter your lastname" formControlName="Last_Name" required>
+                    <mat-error *ngIf="(s.Last_Name?.touched || companydetailsSubmit) && s.Last_Name.errors?.required">Plese fill your lastname</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Job title</mat-label>
+                    <input matInput placeholder="job title" formControlName="Job_Title" required>
+                    <mat-error *ngIf="(s.Job_Title?.touched || maincontactDetailsSubmit) && s.Job_Title.errors?.required">Please enter your job title</mat-error>
+                </mat-form-field>
+
+                <div>
+                    <mat-slide-toggle [checked]="true">Decision maker</mat-slide-toggle>
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email address</mat-label>
+                    <input matInput placeholder="name@email.com" formControlName="Email_Address" [pattern]="mailvalid" required>
+                    <mat-error *ngIf="(s.Email_Address?.touched || maincontactDetailsSubmit) && s.Email_Address.errors?.required">Please enter email id</mat-error>
+                    <!-- <mat-error *ngIf="s.Email_Address.errors?.pattern">Please enter valid email id</mat-error> -->
+                </mat-form-field>
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Confirm email address</mat-label>
+                    <input matInput placeholder="name@email.com" formControlName="Confirm_Email_Address" [pattern]="mailvalid" required>
+                    <mat-error *ngIf="(s.Confirm_Email_Address?.touched || maincontactDetailsSubmit) && s.Confirm_Email_Address.errors?.required">Please enter email id</mat-error>
+                </mat-form-field> -->
+                <mat-form-field class="phone">
+                    <mat-label>Business owner contact number</mat-label>
+                    <input matInput formControlName="Business_Owner_Contact_Number" ng2TelInput [ng2TelInputOptions]="{initialCountry: 'in'}" (countryChange)="onCountryChange1($event)" required>
+                    <mat-error *ngIf="(s.Business_Owner_Contact_Number?.touched || maincontactDetailsSubmit) && s.Business_Owner_Contact_Number.errors?.required">Please enter valid telephone number</mat-error>
+                    <mat-error *ngIf="s.Business_Owner_Contact_Number?.errors?.pattern">Please enter 10 digit mobile number</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Business owner email address</mat-label>
+                    <input matInput placeholder="name@email.com" formControlName="Business_Owner_Email" [pattern]="mailvalid" required>
+                    <mat-error *ngIf="(s.Business_Owner_Email?.touched || maincontactDetailsSubmit) && s.Business_Owner_Email.errors?.required">Please enter owner email id</mat-error>
+                    <!-- <mat-error *ngIf="s.Business_Owner_Email.errors?.pattern">Please enter valid email id</mat-error> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>LinkedIn page</mat-label>
+                    <input matInput placeholder="enter LinkedIn url" formControlName="Linked_In_Profile">
+                    <mat-error *ngIf="(s.Linked_In_Profile?.touched || maincontactDetailsSubmit) && s.Linked_In_Profile.errors?.required">Please enter linkedin address</mat-error>
+                    <mat-error *ngIf="s.Linked_In_Profile.errors?.pattern">Please enter valid linkedin URL </mat-error>
+                </mat-form-field>
+                <div>
+                    <mat-slide-toggle [checked]="true">Business Manager</mat-slide-toggle>
+                </div>
+                <div>
+                    <mat-slide-toggle [checked]="true">Access to branch students </mat-slide-toggle>
+                </div>
+
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="companyOverviewForm" label="Company overview">
+            <form [formGroup]="companyOverviewForm">
+                <h1 color="primary" headline-1>Company overview</h1><br>
+                <!-- <p>All fields are mandatory unless there is no '*'.</p> -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Business founded year</mat-label>
+                    <mat-select formControlName="Business_Founded">
+                        <mat-option *ngFor="let year of yearlist" [value]="year" required>
+                            {{year}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="(t.Business_Founded?.touched || companyoverviewDetailsSubmit) && t.Business_Founded?.errors?.required">Please select business founded year</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Registration #</mat-label>
+                    <input matInput placeholder="Registration #" formControlName="Registration">
+                    <mat-error *ngIf="(t.Registration?.touched || companyoverviewDetailsSubmit) && t.Registration?.errors?.required">Please enter registration number</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>State of incorporation</mat-label>
+                    <mat-select formControlName="state">
+                        <mat-option *ngFor="let state of states" [value]="state" required>
+                            {{state}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="(t.state?.touched || companyoverviewDetailsSubmit) && t.state?.errors?.required">Please select state</mat-error>
+                </mat-form-field>
+                <!-- disabled till update  -->
+                <!-- <div class="mb-3">
+                    <label for="formFile" class="form-label">upload Registration certificate:</label>
+                    <input class="form-control" type="file" id="formFile" (change)="selectFile($event)" formControlName="registration_Certificate">
+                </div> -->
+
+                <!-- <div>
+                    <label>upload Registration certificate</label>
+                    <div>
+                        <mat-toolbar *ngIf="currentFile" class="progress-bar">
+                            <mat-progress-bar color="accent" [value]="progress"></mat-progress-bar>
+                            <span class="progress">{{ progress }}%</span>
+                        </mat-toolbar>
+
+                        <mat-form-field>
+                            <div>
+                                <mat-toolbar>
+                                    <input matInput [value]="fileName" />
+
+                                    <button mat-flat-button color="primary" [disabled]="!currentFile">
+                            Upload
+                          </button>
+                                </mat-toolbar>
+
+                                <input type="file" id="fileInput" (change)="selectFile($event)" name="fileInput" />
+                            </div>
+                        </mat-form-field>
+                    </div>
+
+                    <div *ngIf="message" class="message">
+                        {{ message }}
+                    </div>
+                </div> -->
+
+                <!--  -->
+                <!-- <div style="margin-top:20px">
+                    <mat-label>Have you or any of your counsellors have completed a relevant International Agent training from British Council, ICEF, or other similar organisation?</mat-label>
+                    <mat-button-toggle-group (click)="consi()" name="fontStyle" formControlName="counsellconfirm" aria-label="Font Style">
+                        <mat-button-toggle value="yes">yes</mat-button-toggle>
+                        <mat-button-toggle value="no">no</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+                <mat-form-field appearance="outline" *ngIf="counselor">
+                    <mat-label>Name of the counsellors</mat-label>
+                    <input matInput placeholder="counsellor name" formControlName="counsellor">
+                    <mat-error *ngIf="t.counsellor?.errors?.required">Please enter counsellor name</mat-error>
+                </mat-form-field> -->
+
+                <div style="margin-top: 20px; margin-bottom: 20px;">
+                    <mat-label>How many years of experience do you have in the international education recruitment industry?</mat-label><br/>
+                    <mat-button-toggle-group name="fontStyle" formControlName="experience" aria-label="Font Style">
+                        <mat-button-toggle value="-1">Less than 1</mat-button-toggle>
+                        <mat-button-toggle value="1">1</mat-button-toggle>
+                        <mat-button-toggle value="2">2</mat-button-toggle>
+                        <mat-button-toggle value="3">3</mat-button-toggle>
+                        <mat-button-toggle value="4">4</mat-button-toggle>
+                        <mat-button-toggle value="5">5</mat-button-toggle>
+                        <mat-button-toggle value="5+">5+</mat-button-toggle>
+                    </mat-button-toggle-group>
+                    <!-- <mat-error *ngIf="t.experiance?.errors?.required">Please select experiance</mat-error> -->
+                </div>
+
+                <!-- <mat-form-field appearance="outline" style="margin-top: 20px;">
+                    <mat-label>Countries your company recruits students</mat-label>
+                    <input matInput placeholder="Countries your company recruits students" formControlName="Countries_your_company_recruits_students" required>
+                    
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Total number of students enrolled in last 12 months</mat-label>
+                    <input matInput placeholder="Total number of students enrolled in last 12 months" formControlName="Total_number_of_students_enrolled_in_last_12_months" required>
+                    
+
+                    <mat-error *ngIf="t.Total_number_of_students_enrolled_in_last_12_months?.errors?.pattern">Range between 1 - 999</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter the VISA success rate</mat-label>
+                    <input matInput placeholder="Enter the VISA success rate" formControlName="Enter_the_VISA_success_rate" required>
+                    
+                    <mat-error *ngIf="t.Enter_the_VISA_success_rate?.errors?.pattern"> Range between 1-100</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Total number of potential students in the next 12 months</mat-label>
+                    <input matInput placeholder="Total number of potential students in the next 12 months" formControlName="Total_number_of_potential_students_in_the_next_12_months" required>
+                    
+                    <mat-error *ngIf="t.Total_number_of_potential_students_in_the_next_12_months?.errors?.pattern">Enter only numbers</mat-error>
+                </mat-form-field> -->
+
+                <!-- <div>
+                    <mat-label>Countries your company recruits students</mat-label>
+                    <div *ngFor="let data of countries; let i=index">
+                        <label>
+                          <input type="checkbox" [value]="data.value" (change)="onCheckboxChange($event)"  formControlName="countrySelection"/>
+                          {{data.name}}
+                        </label>
+                    </div>
+                </div> -->
+
+                <!-- country selection with options (temparary hold)-->
+                <!-- <div style="margin-top: 30px;">
+                    <label>Countries your company recruits students:</label>
+                    <div class="dataRow row">
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>Total number of students enrolled in last 12 months</th>
+                                <th>Enter the VISA success rate</th>
+                                <th>Total number of potential students in the next 12 months</th>
+                            </tr>
+                            <tr formGroupName="Australia">
+                                <td>australia</td>
+                                <td><input type="text" formControlName="students12Months" /></td>
+                                <td><input type="text" formControlName="visaSuccessRate" /></td>
+                                <td><input type="text" formControlName="potentialStudents12Months"></td>
+                            </tr>
+                            <tr formGroupName="canada">
+
+                                <td>Canada</td>
+                                <td><input type="text" formControlName="students12Months" /></td>
+                                <td><input type="text" formControlName="visaSuccessRate" /></td>
+                                <td><input type="text" formControlName="potentialStudents12Months"></td>
+
+                            </tr>
+                            <tr formGroupName="usa">
+                                <td>usa</td>
+                                <td><input type="text" formControlName="students12Months" /></td>
+                                <td><input type="text" formControlName="visaSuccessRate" /></td>
+                                <td><input type="text" formControlName="potentialStudents12Months"></td>
+
+                            </tr>
+                            <tr formGroupName="uk">
+                                <td>uk</td>
+                                <td><input type="text" formControlName="students12Months" /></td>
+                                <td><input type="text" formControlName="visaSuccessRate" /></td>
+                                <td><input type="text" formControlName="potentialStudents12Months"></td>
+                            </tr>
+                            <tr formGroupName="other">
+                                <td>other</td>
+                                <td><input type="text" formControlName="otherCountries" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div> -->
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button type="submit">Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="bankDetailsForm" label="Bank details">
+            <form [formGroup]="bankDetailsForm">
+                <h1 color="primary" headline-1>Bank details</h1><br>
+                <!-- <p>All fields are mandatory unless there is no '*'.</p> -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Bank account name</mat-label>
+                    <input matInput placeholder="enter bank account name" formControlName="Bank_Account_Name" required>
+                    <mat-error *ngIf="(fo.Bank_Account_Name?.touched || bankDetailsSubmit) && fo.Bank_Account_Name?.errors?.required">Please enter bank account name</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Bank account number</mat-label>
+                    <input matInput placeholder="enter bank account number" formControlName="Account_Number" required>
+                    <mat-error *ngIf="(fo.Account_Number?.touched || bankDetailsSubmit) && fo.Account_Number?.errors?.required">Please enter bank account number</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Bank name</mat-label>
+                    <input matInput placeholder="enter bank name" formControlName="Bank_Name" required>
+                    <mat-error *ngIf="(fo.Bank_Name?.touched || bankDetailsSubmit) && fo.Bank_Name?.errors?.required">Please enter bank name</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Bank Branch</mat-label>
+                    <input matInput placeholder="enter bank branch" formControlName="Bank_Branch" required>
+                    <mat-error *ngIf="(fo.Bank_Branch?.touched || bankDetailsSubmit) && fo.Bank_Branch?.errors?.required">Please enter bank branch</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>IFSC code</mat-label>
+                    <input matInput placeholder="IFSC code" formControlName="IFSC_Code" required>
+                    <mat-error *ngIf="(fo.IFSC_Code?.touched || bankDetailsSubmit) && fo.IFSC_Code?.errors?.required">Please enter IFSC code</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>IBAN code</mat-label>
+                    <input matInput placeholder="IBAN code" formControlName="IBAN_Code">
+                    <!-- <mat-error *ngIf="fo.IBAN?.errors?.required">Please enter IBAN code</mat-error> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Swift code</mat-label>
+                    <input matInput placeholder="swift code" formControlName="Swift_Code" required>
+                    <mat-error *ngIf="(fo.Swift_Code?.touched || bankDetailsSubmit) && fo.Swift_Code?.errors?.required">Please enter Swift code</mat-error>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button type="submit" mat-button>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <!-- [stepControl]="referencesForm" label="References" -->
+        <mat-step>
+            <!-- <div id="pluswrap" *ngIf="loader">
+                <div class="plus">
+                    <mat-spinner></mat-spinner>
+                </div>
+            </div> -->
+            <ng-template matStepLabel>References</ng-template>
+            <form [formGroup]="referencesForm">
+                <h1 color="primary" headline-1>References</h1><br>
+                <!-- <p>All fields are mandatory unless there is no '*'.</p> -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Full name</mat-label>
+                    <input matInput placeholder="fullname" formControlName="First_Name_and_Last_Name" required>
+                    <mat-error *ngIf="(fi.First_Name_and_Last_Name?.touched || bankDetailsSubmit) && fi.First_Name_and_Last_Name?.errors?.required">Please enter fullname</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Referee designation / Job title</mat-label>
+                    <input matInput placeholder="Referee designation / Job title" formControlName="Referee_Designation" required>
+                    <mat-error *ngIf="(fi.Referee_Designation?.touched || bankDetailsSubmit) && fi.Referee_Designation?.errors?.required">Please enter Referee designation</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name of the institution</mat-label>
+                    <input matInput placeholder="Name of the institution" formControlName="Name_Of_Institution" required>
+                    <mat-error *ngIf="(fi.Name_Of_Institution?.touched || bankDetailsSubmit) && fi.Name_Of_Institution?.errors?.required">Please enter bank name</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <input matInput placeholder="country" formControlName="Country" required>
+                    <mat-error *ngIf="(fi.Country?.touched || bankDetailsSubmit) && fi.Country?.errors?.required">Please enter country name</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Contact number</mat-label>
+                    <input matInput placeholder="Contact Number" formControlName="Preferrend_Contact_Number" required>
+                    <mat-error *ngIf="(fi.Preferrend_Contact_Number?.touched || bankDetailsSubmit) && fi.Preferrend_Contact_Number?.errors?.required">Please enter Valid Contact Number</mat-error>
+                    <mat-error *ngIf="fi.Preferrend_Contact_Number?.errors?.pattern">Please enter 10 digit mobile number</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email address</mat-label>
+                    <input matInput placeholder="Email Address" formControlName="Email_address" [pattern]="mailvalid">
+                    <mat-error *ngIf="(fi.emailAddress?.touched || bankDetailsSubmit) && fi.emailAddress?.errors?.required">Please enter email address</mat-error>
+                    <!-- <mat-error *ngIf="fi.emailAddress.errors?.pattern">Please enter valid email id</mat-error> -->
+                </mat-form-field>
+
+                <!-- <div style="margin-top: 30px;">
+                    <button type="submit" mat-raised-button color="primary">submit</button>
+                </div> -->
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+
+            <ng-template matStepLabel>Documents</ng-template>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="Date">
+                    <th mat-header-cell *matHeaderCellDef> Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="DocType">
+                    <th mat-header-cell *matHeaderCellDef> Document Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.docType}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="DocName">
+                    <th mat-header-cell *matHeaderCellDef> Document Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.DocName}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="Signature">
+                    <th mat-header-cell *matHeaderCellDef> Signature Required </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Signature}} </td>
+                </ng-container>
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="signBy">
+                    <th mat-header-cell *matHeaderCellDef> Signed By </th>
+                    <td mat-cell *matCellDef="let element"> {{element.signBy}} </td>
+                </ng-container>
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="ApprovedBy">
+                    <th mat-header-cell *matHeaderCellDef> Approved By </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ApprovedBy}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-step>
+
+        <mat-step>
+
+            <ng-template matStepLabel>Team</ng-template>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="Date">
+                    <th mat-header-cell *matHeaderCellDef> Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="DocType">
+                    <th mat-header-cell *matHeaderCellDef> Document Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.docType}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="DocName">
+                    <th mat-header-cell *matHeaderCellDef> Document Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.DocName}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="Signature">
+                    <th mat-header-cell *matHeaderCellDef> Signature Required </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Signature}} </td>
+                </ng-container>
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="signBy">
+                    <th mat-header-cell *matHeaderCellDef> Signed By </th>
+                    <td mat-cell *matCellDef="let element"> {{element.signBy}} </td>
+                </ng-container>
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="ApprovedBy">
+                    <th mat-header-cell *matHeaderCellDef> Approved By </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ApprovedBy}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-step>
+        <mat-step class="performance">
+
+            <ng-template matStepLabel>Performance</ng-template>
+            <form>
+            <mat-form-field appearance="outline">
+                <mat-label>No of branches</mat-label>
+                <input matInput placeholder="no of branches" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>No of counsellors</mat-label>
+                <input matInput placeholder="no of counsellors" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Total number of applications</mat-label>
+                <input matInput placeholder="Total number of applications" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Total number of Admissions</mat-label>
+                <input matInput placeholder="Total number of Admissions" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Total number of Rejections</mat-label>
+                <input matInput placeholder="Total number of Rejections" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Number of visa approved</mat-label>
+                <input matInput placeholder="Number of visa approved" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Number of visa by intake</mat-label>
+                <input matInput placeholder="Number of visa by intake" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Number of students by intake</mat-label>
+                <input matInput placeholder="Number of students by intake" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Number of students by intake</mat-label>
+                <input matInput placeholder="Number of students by intake" required>
+            </mat-form-field>
+        </form>
+        </mat-step>
+
+
+        <!-- <mat-step>
+            <ng-template matStepLabel>Submit</ng-template>
+            <h1>Submit your application</h1>
+            <div>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">
+                        All information provided in this agent registration form is true and correct. I agree to the Agent Declaration
+                    </mat-checkbox>
+                </section>
+
+            </div>
+            <div>
+                <button mat-raised-button color="primary">submit</button>
+            </div>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+        </mat-step> -->
+    </mat-stepper>
+</div>

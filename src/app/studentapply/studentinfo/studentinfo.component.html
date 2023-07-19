@@ -1,0 +1,235 @@
+<div class="wrapper">
+    <div id="pluswrap" *ngIf="loader">
+        <div class="plus">
+            <mat-spinner></mat-spinner>
+        </div>
+      </div>
+    <div class="mainHeading">
+        <h1>Student Basic Information</h1>
+    </div>
+    <div class="container">
+        <form [formGroup]="basicInfoForm" (ngSubmit)="submitbasicForm()" novalidate>
+            <!-- <form> -->
+            <div class="basicinfo">
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Student Email Address </label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter Student's Email ID" formControlName="sEmail" [pattern]="mailvalid" required>
+                        <mat-error *ngIf=" (f.sEmail.touched || submitAttempt) && f.sEmail.errors?.required">Please enter student's email id</mat-error>
+                        <mat-error *ngIf="f.sEmail.errors?.pattern">Please enter valid email id</mat-error>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="studentPhone" class="col-sm-2 col-form-label">Student Contact Number </label>
+                    <div class="col-sm-10">
+                        <input type="text" ng2TelInput [ng2TelInputOptions]="{initialCountry: 'in'}" (countryChange)="onCountryChange($event)" class="form-control" id="studentPhone" placeholder="Enter Students's Phone Number" formControlName="sNumber" required>
+                        <mat-error *ngIf=" (f.sNumber.touched || submitAttempt) && f.sNumber.errors?.required">Please enter student phone number</mat-error>
+                        <mat-error *ngIf="f.sNumber.errors?.pattern">Please enter valid mobile number</mat-error>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group row">
+                        <!-- <label class="col-form-label">passport</label> -->
+                        <div class="">
+                            <!-- <input style="display: none;" class="form-control" id="input-file-id" multiple type="file" (change)="selectFile($event)" #fileInput/>
+                            <button mat-label class="uploadlabel" (click)="fileInput.click()" for="input-file-id">{{fileName}}</button>
+                            <mat-error *ngIf=" (f.sNumber.touched || submitted) && f.sNumber.errors?.required">Please enter phone number</mat-error> -->
+                            <div class="imgcontainer">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Upload Passport</label><br>
+                                            <div class="preview-zone hidden">
+                                                <div class="box box-solid">
+                                                    <div class="box-body"></div>
+                                                </div>
+                                            </div>
+                                            <div class="dropzone-wrapper">
+                                                <div class="dropzone-desc">
+                                                    <i class="glyphicon glyphicon-download-alt"></i>
+                                                    <p>{{fileName}}</p>
+                                                </div>
+                                                <input type="file" id="upload_passport" name="img_logo" class="dropzone" accept="application/pdf" (change)="selectFile($event)" formControlName="passportUpload" required>
+                                            </div><br>
+                                            <mat-error *ngIf=" (f.passportUpload.touched || submitAttempt) && f.passportUpload.errors?.required">Please upload passport </mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary pull-right">Upload</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><br>
+            </div>
+        </form>
+
+        <form [formGroup]="secondaryInfoForm" (ngSubmit)="submit()">
+            <div id="epssection" *ngIf="epssection">
+                <div class="eps">
+                    <h2>english proficiency score</h2>
+                    <div>
+                        <label id="example-radio-group-label">Does the student hold an English qualification?</label>&nbsp;
+                        <mat-radio-group aria-labelledby="example-radio-group-label" formControlName="epsRadio" class="example-radio-group" (change)="enablebtn()">
+                            <mat-radio-button class="example-radio-button" name="eps" value="yes">YES</mat-radio-button>
+                            <mat-radio-button class="example-radio-button" name="eps" value="no">NO</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div *ngIf="epsenable">
+                        <div class="epsbuttons">
+                            <!-- {{ fileNames['ielts'] }} -->
+                            <input style="display: none" type="file" accept="application/pdf" (change)="uploadEPS($event,'ielts')" #ieltshiddenfileinput>
+                            <button type="button" mat-raised-button [style.background-color]="buttonColor" (click)="ieltshiddenfileinput.click()">IELTS &nbsp; <span *ngIf="fileNames['ielts']"><i class='fa fa-check-circle' style='color:#37c205'></i></span></button>
+                            
+                            <input style="display: none" type="file" accept="application/pdf" (change)="uploadEPS($event,'toefl')" #toeflhiddenfileinput>
+                            <button type="button" mat-raised-button (click)="toeflhiddenfileinput.click()">TOEFL&nbsp; <span *ngIf="fileNames['toefl']"><i class='fa fa-check-circle' style='color:#37c205'></i></span></button>
+                            
+                            <input style="display: none" type="file" accept="application/pdf" (change)="uploadEPS($event,'duolingo')" #duolingohiddenfileinput>
+                            <button type="button" mat-raised-button (click)="duolingohiddenfileinput.click()">Duolingo&nbsp; <span *ngIf="fileNames['duolingo']"><i class='fa fa-check-circle' style='color:#37c205'></i></span></button>
+                            
+                            <input style="display: none" type="file" accept="application/pdf" (change)="uploadEPS($event,'pte')" #ptehiddenfileinput>
+                            <button type="button" mat-raised-button (click)="ptehiddenfileinput.click()">PTE&nbsp; <span *ngIf="fileNames['pte']"><i class='fa fa-check-circle' style='color:#37c205'></i></span></button>
+
+                            <!-- <button type="button" mat-raised-button (click)="ieltsDialog()">IELTS</button> -->
+                            <!-- <button type="button" mat-raised-button (click)="toeflDialog()">TOEFL</button>
+                            <button type="button" mat-raised-button (click)="duolingoDialog()">Duolingo</button>
+                            <button type="button" mat-raised-button (click)="pteDialog()">PTE</button>
+                            <button type="button" disabled mat-raised-button>Others</button> -->
+                        </div>
+                        <div>
+                            <!-- image upload -->
+                            <!-- <div class="epsupload">
+                                <input style="display: none;" id="input-file-id" multiple type="file" (change)="selectFile($event)" />
+                                <label mat-label class="uploadlabel" for="input-file-id">{{fileName2}}</label>
+
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="gre">
+                    <h2>gre score</h2>
+                    <div>
+                        <label id="example-radio-group-label">Does the student hold GRE score?</label>&nbsp;
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="greRadio" (change)="enablegrebtn()">
+                            <mat-radio-button class="example-radio-button" name="gre" value="yes">YES</mat-radio-button>
+                            <mat-radio-button class="example-radio-button" name="gre" value="no">NO</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div *ngIf="greenable">
+                        <div class="epsbuttons">
+                            <input style="display: none" type="file" accept="application/pdf" (change)="uploadEPS($event,'gre')" #grehiddenfileinput>
+                            <button type="button" mat-raised-button (click)="grehiddenfileinput.click()">GRE &nbsp; <span *ngIf="fileNames['gre']"><i class='fa fa-check-circle' style='color:#37c205'></i></span></button>
+
+                            <!-- <button type="button" mat-raised-button (click)="greDialog()">GRE</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="education">
+                    <h2>education history</h2>
+                    <div>
+                        <label id="example-radio-group-label">Does the student hold a post Secondary Degree?</label>&nbsp;
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="degreeRadio" (change)="enableeducation()">
+                            <mat-radio-button class="example-radio-button" name="education" value="yes">YES</mat-radio-button>
+                            <mat-radio-button class="example-radio-button" name="education" value="no">NO</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div *ngIf="educationenable">
+                        <div>
+                            <mat-form-field id="education_level">
+                                <mat-label>Level of education?</mat-label>
+                                <mat-select name="levelEduaction" formControlName="leveleducation" (selectionChange)="leveleducationchange()">
+                                    <mat-option value="Masters">Master's Degree</mat-option>
+                                    <mat-option value="bacherlors">Bacherlor's Degree</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <div class="mastersenable" *ngIf="mastersenable">
+                                <!--old 
+                                    <div>
+                                    <label>Master's degree : &nbsp;</label>
+                                    <input style="display: none;" id="input-file-id" multiple type="file" (change)="selectFile($event)" />
+                                    <label mat-label class="uploadeducation" for="input-file-id">{{masters}}</label>
+                                </div>
+                                <div>
+                                    <label>bacherlor's degree : &nbsp;</label>
+                                    <input style="display: none;" id="input-file-id" multiple type="file" (change)="selectFile($event)" />
+                                    <label mat-label class="uploadeducation" for="input-file-id">{{bacherlors}}</label>
+                                </div>
+                                <div>
+                                    <label>Intermediate : &nbsp;</label>
+                                    <input style="display: none;" id="input-file-id" multiple type="file" (change)="selectFile($event)" />
+                                    <label mat-label class="uploadeducation" for="input-file-id">{{intermediate}}</label>
+                                </div>
+                                <div>
+                                    <label>SSC / 10th : &nbsp;</label>
+                                    <input style="display: none;" id="input-file-id" multiple type="file" (change)="selectFile($event)" />
+                                    <label mat-label class="uploadeducation" for="input-file-id">{{ssc}}</label>
+                                </div> -->
+
+
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Master's degree  </label>
+                                    <input class="form-control" type="file" id="formFile" accept="application/pdf" (change)="uploadEducation($event,'master')">
+                                    <span  *ngIf="fileNames['master']"><i class='fa fa-check-circle' style='color:#37c205'></i></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Bacherlor's degree </label>
+                                    <input class="form-control" type="file" id="formFile"  accept="application/pdf" (change)="uploadEducation($event,'bacherlor')">
+                                    <span *ngIf="fileNames['bachelor']"><i class='fa fa-check-circle' style='color:#37c205' ></i> </span> 
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Intermediate </label>
+                                    <input class="form-control" type="file" id="formFile" accept="application/pdf" (change)="uploadEducation($event,'intermediate')">
+                                    <span *ngIf="fileNames['intermediate']"><i class='fa fa-check-circle' style='color:#37c205'></i></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">SSC / 10th </label>
+                                    <input class="form-control" type="file" id="formFile" accept="application/pdf" (change)="uploadEducation($event,'ssc')">
+                                    <span *ngIf="fileNames['ssc']"><i class='fa fa-check-circle' style='color:#37c205'></i></span>
+                                </div>
+
+                            </div>
+                            <ng-container *ngIf="bacherlorsenable">
+                                <!-- old code
+                                     <div>
+                                    <label>bacherlor's degree : &nbsp;</label>
+                                    <input style="display: none;" id="input-file-id" multiple type="file" (change)="selectFile($event)" />
+                                    <label mat-label class="uploadeducation" for="input-file-id">{{bacherlors}}</label>
+                                </div>
+                                <div>
+                                    <label>Intermediate : &nbsp;</label>
+                                    <input style="display: none;" id="input-file-id" multiple type="file" (change)="selectFile($event)" />
+                                    <label mat-label class="uploadeducation" for="input-file-id">{{intermediate}}</label>
+                                </div>
+                                <div>
+                                    <label>SSC / 10th : &nbsp;</label>
+                                    <input style="display: none;" id="input-file-id" multiple type="file" (change)="selectFile($event)" />
+                                    <label mat-label class="uploadeducation" for="input-file-id">{{ssc}}</label>
+                                </div> -->
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Bacherlor's degree </label>
+                                    <input class="form-control" type="file" id="formFile" accept="application/pdf" (change)="uploadEducation($event,'bacherlor')">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Intermediate </label>
+                                    <input class="form-control" type="file" id="formFile" accept="application/pdf" (change)="uploadEducation($event,'intermediate')">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">SSC / 10th </label>
+                                    <input class="form-control" type="file" id="formFile" accept="application/pdf" (change)="uploadEducation($event,'ssc')">
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" mat-raised-button class="save">Next</button>
+            </div>
+            <!-- <mat-checkbox required>I Consent to the collection of my personal information in accordance with the TAG Privacy Policy</mat-checkbox><br><br> -->
+        </form>
+    </div>
+</div>
