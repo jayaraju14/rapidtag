@@ -1,0 +1,75 @@
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 2em;
+}
+
+table td,
+table th {
+    border: none;
+}
+
+.uploadlabel {
+    background: #eb7304;
+    width: 140px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.h2 {
+    font-family: IcoFont;
+}
+
+.save {
+    margin: 7px;
+    color: white;
+    background-color: #212e36;
+}
+
+.save:hover {
+    margin: 7px;
+    color: white;
+    background-color: #eb7304;
+}
+
+@media only screen and (max-width: 575px) {
+    table td {
+        font-size: 10px;
+    }
+    #btnUpload {
+        margin-left: 0px;
+    }
+}
+
+::ng-deep #btnUpload {
+    background-color: transparent;
+    margin-left: -125px;
+}
+
+::ng-deep #btnUpload mat-icon {
+    color: #EB7304
+}
+
+.circular-icon-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fdd835;
+}
+
+.circular-icon-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fdd835;
+}

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingComponent } from './landing.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,6 +14,16 @@ import { AgentregistrationComponent } from './component/agentregistration/agentr
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgentregistrationdetailsComponent } from './component/agentregistrationdetails/agentregistrationdetails.component';
 import {Ng2TelInputModule} from 'ng2-tel-input';
+import { ValidateagentComponent } from './component/validateagent/validateagent.component';
+import { LoginComponent } from './component/login/login.component';
+import { UniversitiesComponent } from './component/universities/universities.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AgentSuccessdialogComponent } from './component/agent-successdialog/agent-successdialog.component';
+import { AuthService } from '../_services/auth.service';
+import { OtpagentComponent } from './component/otpagent/otpagent.component';
+import { AgentregistercontinueComponent } from './component/agentregistercontinue/agentregistercontinue.component';
+import { EmailMaskPipe } from '../shared/email-mask.pipe';
+import { EmployeeLoginComponent } from './component/employee-login/employee-login.component';
 
 
 const routes: Routes = [
@@ -26,7 +36,13 @@ const routes: Routes = [
     {path:'forget-password',component:ForgetpasswordComponent},
     {path:"comingsoon",component:ComingSoonComponent},
     {path:"agent-register",component:AgentregistrationComponent},
-    {path:"agent-registerDetails",component:AgentregistrationdetailsComponent}
+    {path:"agent-registerDetails",component:AgentregistrationdetailsComponent},
+    {path:"validate-agent",component:ValidateagentComponent},
+    {path:"login",component:LoginComponent},
+    {path:"universities",component:UniversitiesComponent},
+    {path:"agent-otp-verify",component:OtpagentComponent},
+    {path:"continue-agent-registration",component:AgentregistercontinueComponent},
+    {path:'employee-login',component:EmployeeLoginComponent}
   ]}
   // {path:'',component:LandingComponent}
   
@@ -44,16 +60,25 @@ const routes: Routes = [
     ForgetpasswordComponent,
     AgentregistrationComponent,
     AgentregistrationdetailsComponent,
-   
-    
+    ValidateagentComponent,
+    LoginComponent,
+    UniversitiesComponent,
+    AgentSuccessdialogComponent,
+    OtpagentComponent,
+    AgentregistercontinueComponent,
+    EmailMaskPipe,
+    EmployeeLoginComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     Ng2TelInputModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  providers: [AuthService],
+
 })
 export class LandingModule { }

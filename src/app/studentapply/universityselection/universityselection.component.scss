@@ -1,0 +1,68 @@
+.wrapper {
+    text-align: center;
+}
+
+#tab-group mat-tab-body {
+    flex-grow: 1;
+}
+
+.card {
+    height: 254px;
+    padding: 44px;
+    border: 0px;
+}
+
+.img {
+    max-width: 100%;
+    width: 334px;
+}
+
+#graduateBtn {
+    margin: 7px;
+    color: white;
+    background-color: #212e36;
+}
+
+#ugBtn {
+    margin: 7px;
+    color: white;
+    background-color: #212e36;
+}
+
+#graduateBtn:hover {
+    margin: 7px;
+    color: white;
+    background-color: #eb7304;
+}
+
+#ugBtn:hover {
+    margin: 7px;
+    color: white;
+    background-color: #eb7304;
+}
+
+.save {
+    margin: 7px;
+    color: white;
+    background-color: #212e36;
+}
+
+.save:hover {
+    margin: 7px;
+    color: white;
+    background-color: #eb7304;
+}
+
+.h2 {
+    font-family: IcoFont;
+    color: #eb7304;
+    padding-top: 15px;
+}
+
+::ng-deep mat-radio-button {
+    margin-right: 10px;
+}
+
+.no-icons-select .mat-select-arrow {
+    display: none;
+  }

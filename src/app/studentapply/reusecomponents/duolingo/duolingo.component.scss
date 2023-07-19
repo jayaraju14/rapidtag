@@ -1,0 +1,38 @@
+.demo-inline-calendar-card {
+    width: 300px;
+}
+.wrapper{
+    margin-top: 20%;
+}
+.calender {
+    width: 40%;
+    margin: 40px 0 0 140px;
+}
+
+.score .mat-form-field {
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.uploadlabel {
+    background: #eb7304;
+    width: 140px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 170px;
+}
+.h2{
+    font-family: IcoFont;
+
+}
+@media only screen and (max-width: 575px) {
+    .calender {
+        width: 68%;
+        margin: 74px 0 0 99px;
+    }
+}

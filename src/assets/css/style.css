@@ -470,9 +470,10 @@ button:active {
     background: #fff;
 }
 
-.bg-main {
+/* .bg-main {
     background: #eb7304;
-}
+    opacity: 0.70;
+} */
 
 .bg-off-white {
     background-color: #f4f8ff;
@@ -553,7 +554,7 @@ button:active {
     max-width: 825px;
 }
 
-.section-title.section-title-white small {
+/* .section-title.section-title-white small {
     color: #fff;
 }
 
@@ -563,7 +564,7 @@ button:active {
 
 .section-title.section-title-white p {
     color: #fff;
-}
+} */
 
 .section-title.section-title-white p a {
     color: #fff;
@@ -1037,16 +1038,16 @@ select.form-control {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(31, 18, 253, 0.58);
+    /* background-color: rgba(31, 18, 253, 0.58); */
 }
 
 .page-bg-1 {
-    background-image: url(../images/page-bg/page-bg-1.jpg);
+    background-image: url(../images/Banner.png);
     /* background-image: url(../images/Banner-3.png); */
 }
 
 .page-bg-2 {
-    background-image: url(../images/page-bg/The\ Admit\ Group.png);
+    background-image: url(../images/Banner.png);
 }
 
 
@@ -3795,7 +3796,8 @@ select.form-control {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background-color: #fff;
+    background-color: #585d6c;
+    opacity: 0.50;
     border-radius: 35px;
     padding: 10px;
     overflow: hidden;
@@ -3805,6 +3807,7 @@ select.form-control {
     border: 0;
     padding: 10px 20px;
     background-color: transparent;
+    color: white;
     border-radius: 0;
 }
 
@@ -4024,6 +4027,9 @@ select.form-control {
 
 .footer-copyright-text p a:hover {
     text-decoration: underline;
+}
+.footer-logo{
+    max-width: 50%;
 }
 
 .pricing-card {
@@ -6403,6 +6409,11 @@ main>section.l-section-4 .container {
 
 .unicount {
     margin-top: 50px;
-    margin-inline: 10px;
+    margin-inline: 20px;
     text-align: center;
+    font-size: 40px;
+}
+.count{
+    font-size: xx-large;
+    margin-inline: 20px;
 }

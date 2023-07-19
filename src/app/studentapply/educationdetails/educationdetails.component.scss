@@ -1,0 +1,77 @@
+mat-form-field {
+    display: flex;
+    flex-direction: column;
+    width: 45% !important;
+    padding-top: 10px;
+}
+
+label {
+    color: #767676
+}
+
+.dates mat-form-field {
+    display: flex;
+    flex-direction: row;
+}
+
+::ng-deep #mat-radio-3 {
+    margin-left: 15px;
+}
+
+.mat-radio-button {
+    margin-left: 15px;
+}
+
+.h1 {
+    font-family: IcoFont;
+    color: #212e36;
+}
+
+.save {
+    margin: 7px;
+    color: white;
+    background-color: #212e36;
+}
+
+.save:hover {
+    margin: 7px;
+    color: white;
+    background-color: #eb7304;
+}
+
+//new code
+.form-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.studentDetails {
+    margin-left: 292px;
+}
+
+.form-control {
+    width: 60%;
+}
+
+.wrapper {
+    margin-left: 300px;
+}
+
+.dates {
+    margin: 46px 0 46px 0;
+}
+
+@media only screen and (max-width: 575px) {
+    .wrapper {
+        margin-left: 0px;
+    }
+    .form-control {
+        width: 100%;
+    }
+     ::ng-deep .dates .mat-form-field .mat-form-field-wrapper {
+        width: 125px !important;
+    }
+    .mat-radio-button {
+        margin-left: 57px;
+    }
+}

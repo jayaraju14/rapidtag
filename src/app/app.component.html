@@ -1,1 +1,302 @@
-<router-outlet></router-outlet>
+<!-- Preloader -->
+<div class="preloader">
+    <div class="preloader-wrapper">
+        <div class="preloader-content">
+            <div class="blob-1"></div>
+            <div class="blob-2"></div>
+        </div>
+    </div>
+</div>
+<!-- Preloader -->
+<a href="https://api.whatsapp.com/send/?phone=918247019238&text&type=phone_number&app_absent=0" class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+</a>
+<!-- Navbar -->
+<div class="fixed-top bg-white">
+
+    <div class="navbar-area sticky-black">
+        <div class="container">
+            <div class="mobile-nav">
+                <a href="index.html" class="mobile-brand">
+                    <img src="assets/images/tag logo.png" alt="logo" class="logo">
+                </a>
+                <div class="navbar-option">
+                    <div class="navbar-option-item">
+                        <button type="button" routerLink="agent-register">
+                            <!-- <button type="button"> -->
+                            <i class="flaticon-user" ></i>
+                        </button>
+                    </div>
+                    <div class="navbar-option-item side-topbar-option">
+                        <button type="button">
+                            <i class="flaticon-grid" ></i>
+                        </button>
+                    </div>
+                    <div class="navbar-option-item">
+                        <button type="button" class="search-option">
+                            <i class="icofont-search-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/images/tag logo.png" alt="logo" class="logo">
+                    </a>
+                    <!-- <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a routerLink="" class="nav-link active">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Find Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="services.html" class="nav-link dropdown-toggle">Universities</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="pricing.html" class="nav-link">Graduate</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pricing.html" class="nav-link">Under Graduate</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link dropdown-toggle">Services</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="services.html" class="nav-link">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pricing.html" class="nav-link">Trending Courses</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="faqs.html" class="nav-link">FAQ's</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="our-team.html" class="nav-link">Webinars</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="testimonial.html" class="nav-link">Testimonial</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Stories</a>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <div class="navbar-option">
+                        <div class="navbar-option-item" *ngIf="!isEmployeeLoginRoute()">
+                            <!-- <a routerLink="login" *ngIf="!authService.isLoggedIn" (click)="login()" class="btn main-btn">Login Or Register</a>
+                            <a routerLink="apply-student" *ngIf="authService.isLoggedIn" (click)="applynow()"class="btn main-btn"> Apply Now</a> -->
+                            <div class="btns" *ngIf="!userRole">
+                                <a id="loginuser"  routerLink = "login"  (click)="login()" class="btn main-btn">Login</a>
+                                <a id="becomeagent"    [routerLink] = "['/agent-register']" class="btn main-btn">Become an agent</a>
+                            </div>
+                            <a routerLink="apply-student" *ngIf="userRole=='AGENT'" (click)="applynow()"class="btn main-btn"> Apply Now</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Navbar -->
+<router-outlet (activate)="onScroll($event)"></router-outlet>
+
+<!-- Footer -->
+<footer class="bg-off-white footer">
+    <div class="footer-shapes">
+        <div class="footer-shape">
+            <img src="assets/images/shape-1.png" alt="shape">
+        </div>
+        <div class="footer-shape footer-round-shape">
+            <img src="assets/images/shape-2.png" alt="shape">
+        </div>
+    </div>
+    <div class="footer-upper pt-100 pb-80 position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="footer-content-item">    
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="assets/images/tag logo.png" alt="logo"></a>
+                        </div>
+                        <div class="footer-details">
+                            <p>Mission Is To Bring The Power Of Ml To Every Business</p>
+                            <ul class="social-list social-list-btn">
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank"><i class="icofont-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank"><i class="icofont-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/" target="_blank"><i class="icofont-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.pinterest.com/" target="_blank"><i class="icofont-pinterest"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer-content-list footer-content-item desk-pad-left-70">
+                        <div class="footer-content-title">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul class="footer-details footer-list">
+                            <li><a routerLink="#">About Us</a></li>
+                            <li><a routerLink="#">News & Blogs</a></li>
+                            <li><a routerLink="#">Services</a></li>
+                            <li><a routerLink="#">Universities</a></li>
+                            <li><a routerLink="#">Others</a></li>
+                            <li><a routerLink="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer-content-list footer-content-item desk-pad-left-70">
+                        <div class="footer-content-title">
+                            <h3>Services</h3>
+                        </div>
+                        <ul class="footer-details footer-list">
+                            <li><a href="#">Research & Resources</a></li>
+                            <li><a href="#">Application Assistance</a></li>
+                            <li><a href="#">Student Visa Support</a></li>
+                            <li><a href="#">Campus Transition</a></li>
+                            <li><a href="#">Academic Support</a></li>
+                            <li><a href="#">Career Development</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer-content-list footer-content-item desk-pad-left-70">
+                        <div class="footer-content-title">
+                            <h3>Contact</h3>
+                        </div>
+                        <div class="footer-details footer-address">
+                            <div class="footer-address-item">
+                                <div class="footer-address-text">
+                                    <h4>Phone:</h4>
+                                    <p><a href="tel:001-987-654-432">(+91) 84381 86565</a></p>
+                                </div>
+                            </div>
+                            <div class="footer-address-item">
+                                <div class="footer-address-text">
+                                    <h4>Email:</h4>
+                                    <p><a href="mailto:info@tag.com">tag@theadmitgroup.com</a></p>
+                                </div>
+                            </div>
+                            <div class="footer-address-item">
+                                <div class="footer-address-text">
+                                    <h4>Address:</h4>
+                                    <p>The Admit Group Unit 317, Vasavi's Sky City, Gachibowli, Hyderabad, India, 500081</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-lower bg-blue position-relative">
+        <div class="container">
+            <div class="footer-copyright-text footer-copyright-text-white">
+                <p>Copyright ©2022 Admit Group. Designed & Developed By <a href="https://rapidconsultinggroup.com/" target="_blank">Rapid</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+
+<!-- Scroll-top -->
+<div class="scroll-top" id="scrolltop">
+    <div class="scroll-top-inner">
+        <i class="icofont-long-arrow-up" (click)="onScroll($event)"></i>
+    </div>
+</div>
+<!-- Scroll-top -->
+
+<!-- Topbar-side-modal -->
+<div class="side-modal-wrapper">
+    <div class="side-modal">
+        <div class="side-modal-header">
+            <div class="side-modal-logo">
+                <a href="index.html"><img src="assets/images/tag logo.png" alt="logo"></a>
+            </div>
+            <div class="side-modal-close">
+                <i class="icofont-close"></i>
+            </div>
+        </div>
+        <div class="side-modal-body">
+            <div class="sidebar-info-content">
+                <h3>Contact Us</h3>
+                <div class="sidebar-info-list">
+                    <div class="sidebar-info-list-item">
+                        <i class="icofont-headphone"></i>
+                        <a href="tel:00321-654-98">+91 84381 86565</a>
+                    </div>
+                    <div class="sidebar-info-list-item">
+                        <i class="icofont-ui-message"></i>
+                        <a href="mailto:info@tag.com">tag@theadmitgroup.com</a>
+                    </div>
+                    <div class="sidebar-info-list-item">
+                        <i class="icofont-paper-plane"></i>
+                        <a href="contact.html">Request For Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-info-content">
+                <h3>Follow Us</h3>
+                <ul class="social-list">
+                    <li>
+                        <a href="https://www.facebook.com/RapidTechservices/" target="_blank"><i class="icofont-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/" target="_blank"><i class="icofont-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/rapidconsulting/" target="_blank"><i class="icofont-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/" target="_blank"><i class="icofont-pinterest"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar-side-modal -->
+
+<!-- Search-overlay -->
+<div class="search-overlay">
+    <div class="search-close">
+        <i class="icofont-close"></i>
+    </div>
+    <div class="search-form-area">
+        <div class="search-area-logo">
+            <a href="index.html">
+                <img src="assets/images/tag logo.png" alt="logo">
+            </a>
+        </div>
+        <form>
+            <div class="form-group search-form-group">
+                <input type="text" placeholder="Search..." class="form-control" autofocus="autofocus">
+                <button>
+                    <i class="icofont-search-1"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Search-overlay -->

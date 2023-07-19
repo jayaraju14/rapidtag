@@ -1,0 +1,52 @@
+.agent-btn
+{
+    background-color: #212e36;
+    color: #fff;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+
+}
+    
+.agent-btn:hover {
+    background-color: #eb7304;
+    color: #212e36;
+}
+.student-btn
+{
+    background-color: #212e36;
+    color: #fff;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+}
+    
+.student-btn:hover {
+    background-color: #eb7304;
+    color: #212e36;
+}
+.row{
+    display: flex;
+}
+.register{
+    text-align: center;
+}
+
+::ng-deep .cdk-overlay-pane {
+    margin-top: 100px !important;
+}
+
+#pluswrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    top: 0;
+    right: 0;
+}
+
+.plus {
+    display: flex;
+    margin: 0 auto;
+}

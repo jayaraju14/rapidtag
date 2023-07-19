@@ -1,0 +1,267 @@
+.container {
+    margin-left: 20%;
+}
+
+label {
+    color: #767676
+}
+
+.wrapper {
+    overflow-x: hidden;
+}
+
+.wrapper .mainHeading {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.basicinfo .mat-form-field {
+    display: flex;
+    flex-direction: row;
+}
+
+.progress-bar {
+    padding: 0;
+}
+
+.progress {
+    width: 50px;
+}
+
+::ng-deep .iti {
+    // display: block !important;
+    width: 100%;
+}
+
+#fileInput {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.mat-toolbar-single-row {
+    height: auto !important;
+    background: transparent;
+    padding: 0;
+    font-size: 17px;
+    width: 200px;
+}
+
+.mat-toolbar-single-row button {
+    width: 100px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.message {
+    background-color: #ddd;
+    padding: 15px;
+    color: #333;
+    border: #aaa solid 1px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.eps {
+    margin-top: 35px;
+    h2 {
+        text-transform: uppercase;
+        color: #eb7304;
+        font-family: IcoFont;
+    }
+}
+
+.gre h2 {
+    text-transform: uppercase;
+    color: #eb7304;
+    font-family: IcoFont;
+}
+
+.education h2 {
+    text-transform: uppercase;
+    color: #eb7304;
+    font-family: IcoFont;
+}
+
+mat-radio-button {
+    margin: 15px;
+}
+
+.epsbuttons button {
+    margin: 20px;
+    background: #eb7304;
+    opacity: 0.8;
+}
+
+.epsupload mat-form-field {
+    width: 20%;
+}
+
+.uploadlabel {
+    background: #eb7304;
+    width: 140px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.uploadeducation {
+    background: #eb7304;
+    width: 140px;
+    height: 30px;
+    text-align: center;
+    padding: 4px 0 0 0;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.save {
+    margin: 7px;
+    color: white;
+    background-color: #212e36;
+}
+
+.save:hover {
+    margin: 7px;
+    color: white;
+    background-color: #eb7304;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-outer-circle {
+    border-color: #212e36 !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #212E36 !important;
+}
+
+.form-control {
+    width: 40% !important;
+}
+
+.form-group {
+    margin-top: 10px;
+    width: 120%;
+}
+
+@media only screen and (max-width: 575px) {
+    .form-control {
+        width: 100% !important;
+    }
+    .wrapper {
+        padding-top: 45px;
+    }
+    .form-group {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .container {
+        margin-left: 0%;
+    }
+    .imgcontainer {
+        // padding: 50px 10%;
+        width: 100% !important;
+    }
+}
+
+//image
+.imgcontainer {
+    // padding: 50px 10%;
+    width: 36%;
+}
+
+.box {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+    border-bottom: 1px solid #f4f4f4;
+    margin-bottom: 10px;
+}
+
+.box-tools {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.dropzone-wrapper {
+    border: 2px dashed #91b0b3;
+    color: #92b0b3;
+    position: relative;
+    height: 150px;
+}
+
+.dropzone-desc {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 40%;
+    top: 50px;
+    font-size: 16px;
+}
+
+.dropzone,
+.dropzone:focus {
+    position: absolute;
+    outline: none !important;
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.dropzone-wrapper:hover,
+.dropzone-wrapper.dragover {
+    background: #ecf0f5;
+}
+
+.preview-zone {
+    text-align: center;
+}
+
+.preview-zone .box {
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+::ng-deep #education_level {
+    width: 33%;
+}
+
+button.active {
+    background-color: green;
+  }
+  #pluswrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    top: 0;
+    right: 0;
+}
+
+.plus {
+    display: flex;
+    margin: 0 auto;
+}

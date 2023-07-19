@@ -1,0 +1,65 @@
+<div class="wrapper">
+    <div class="modelheader">
+        <a>Back</a>
+    </div>
+    <h2 style="text-align: center;">GRE Score Reporting</h2>
+    <div class="modelcontent">
+        <!-- <mat-card class="calender">
+            <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+        </mat-card> -->
+        <form [formGroup]="GREForm" (ngSubmit)="saveData()">
+        <div>
+            <mat-form-field>
+                <mat-label>Registration Number</mat-label>
+                <input matInput placeholder="Enter Registration Number" formControlName="Registration_Number" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Test Date</mat-label>
+                <input matInput placeholder="Selct Test Date" formControlName="Test_Date" required>
+            </mat-form-field>
+        </div>
+        <div class="score row">
+            <mat-form-field class="col-md-4">
+                <mat-label>Analytical Writing</mat-label>
+                <input matInput placeholder="Enter Analytical Writing" formControlName="analytical_Write" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field  class="col-md-4">
+                <mat-label>Analytical Writing Percentile</mat-label>
+                <input matInput placeholder="Enter Analytical Writing Percentile" formControlName="analytical_Write_Precentage" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field class="col-md-4">
+                <mat-label>Quantitative Reasoning</mat-label>
+                <input matInput placeholder="Enter Quantitative Reasoning" formControlName="quantitative_Reasoning" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field class="col-md-4">
+                <mat-label>Quantitative Reasoning Percentile</mat-label>
+                <input matInput placeholder="Enter Quantitative Reasoning Percentile" formControlName="quantitative_Reasoning_Percentage" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field class="col-md-4">
+                <mat-label>Verbal Reasoning</mat-label>
+                <input matInput placeholder="Enter Verbal Reasoning" formControlName="verbal_Reasoning" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field class="col-md-4">
+                <mat-label>Verbal Reasoning Percentile</mat-label>
+                <input matInput placeholder="Ente Verbal Reasoning Percentile" formControlName="verbal_Reasoning_Percentage" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+        </div>
+        <button type="button" mat-raised-button (click)="closeDialog()">Close</button> 
+        <button  mat-raised-button color="primary" style="float: right;" >Save</button>
+
+    </form>
+        
+        <div>
+
+        </div>
+    </div>
+    
+</div>

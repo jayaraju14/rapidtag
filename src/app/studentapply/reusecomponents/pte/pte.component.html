@@ -1,0 +1,78 @@
+<div class="wrapper">
+    <div class="modelheader">
+        <a>Back</a>
+        <!-- <button mat-raised-button color="primary" style="float: right;">Save</button> -->
+    </div>
+    <h2 style="text-align: center;">PTE Score Reporting</h2>
+    <div class="modelcontent">
+        <!-- <mat-card class="calender">
+            <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+        </mat-card> -->
+        <form [formGroup]="PTEForm" (ngSubmit)="saveData()">
+        <div>
+            <mat-form-field>
+                <mat-label>Test Taker ID Id</mat-label>
+                <input matInput placeholder="Enter Candidate ID" formControlName="Test_Taker_ID" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Test Centre ID</mat-label>
+                <input matInput placeholder="Selct Test Date" formControlName="Test_Centre_ID" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Test Centre</mat-label>
+                <input matInput placeholder="Enter level" formControlName="Test_Centre" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input matInput placeholder="Enter Candidate number" formControlName="Date" required>
+            </mat-form-field>
+        </div>
+        <!-- <div>
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input matInput placeholder="Selct Test Date" formControlName="Test_Date" required>
+            </mat-form-field>
+        </div> -->
+        <div>
+            <mat-form-field>
+                <mat-label>Country of Citizenship</mat-label>
+                <input matInput placeholder="Enter center number" formControlName="Country_of_Citizenship" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Country of Residence</mat-label>
+                <input matInput placeholder="Enter center number" formControlName="Country_of_Residence" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Test Centre Country</mat-label>
+                <input matInput placeholder="Enter center number" formControlName="Test_Centre_Country" required>
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <mat-label>Valid Until</mat-label>
+                <input matInput placeholder="Enter center number" formControlName="Valid_Until" required>
+            </mat-form-field>
+        </div>
+
+        <button type="button" mat-raised-button (click)="closeDialog()">Close</button> 
+        <button  mat-raised-button color="primary" style="float: right;" >Save</button>
+
+    </form>
+        
+        <div>
+
+        </div>
+    </div>
+    <!-- <button type="button" mat-raised-button (click)="closeDialog()">Next</button> -->
+</div>

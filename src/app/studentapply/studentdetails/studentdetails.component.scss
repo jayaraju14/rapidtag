@@ -1,0 +1,59 @@
+mat-form-field {
+    display: flex;
+    flex-direction: column;
+    width: 30% !important;
+    // padding-top: 10px;
+}
+
+label {
+    color: #767676
+}
+
+.h2 {
+    font-family: IcoFont;
+}
+
+.save {
+    margin: 7px;
+    color: white;
+    background-color: #212e36;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-outer-circle {
+    border-color: #212e36 !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #212E36 !important;
+}
+
+.form-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.studentDetails {
+    margin-left: 50px;
+}
+
+.form-control {
+    width: 100%;
+}
+::ng-deep .iti {
+    // display: block !important;
+    width: 100%;
+}
+@media only screen and (max-width: 575px) {
+    .studentDetails {
+        margin-left: 0px;
+    }
+    .form-control {
+        width: 100%;
+    }
+}
+.emer{
+    margin-top: 30px;
+}
+.diffmaillabel{
+font-size: 17px;
+}

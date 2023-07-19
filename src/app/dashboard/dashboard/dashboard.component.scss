@@ -1,0 +1,45 @@
+.main-cards {
+display:inline-flex ;
+}
+
+.main-card-1,
+.main-card-2,
+.main-card-3,
+.main-card-4 {
+    width: 230px !important;
+    height: 150px !important;
+    border-radius: 15px !important;
+    color: #fff;
+}
+
+.main-card-1 {
+    background-color: #65ADFF;
+}
+
+.main-card-2 {
+    background-color: #FFC672;
+}
+
+.main-card-3 {
+    background-color: #FF6D86;
+}
+
+.main-card-4 {
+    background-color: #49DDBF;
+}
+
+.second-cards {
+    margin-top: 30px;
+}
+
+.second-card-1,
+.second-card-2 {
+    // width: 230px !important;
+    height: 200px !important;
+    border-radius: 15px !important;
+    // color: #fff;
+}
+
+.feed-data {
+    margin-top: 30px;
+}

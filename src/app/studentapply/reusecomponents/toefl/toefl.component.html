@@ -1,0 +1,86 @@
+<div class="wrapper">
+    <div class="modelheader">
+        <a>Back</a>
+        <button mat-raised-button color="primary" style="float: right;">Save</button>
+    </div>
+    <h2 style="text-align: center;">TOEFL Score Reporting</h2>
+    <div class="modelcontent">
+        <!-- <mat-card class="calender">
+            <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+        </mat-card> -->
+        <form [formGroup]="TOEFLForm" (ngSubmit)="saveData()">
+        <div>
+            <mat-form-field>
+                <mat-label>Test Date</mat-label>
+                <input matInput placeholder="Selct Test Date" formControlName="Test_Date" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Appointment Number</mat-label>
+                <input matInput placeholder="Enter level" formControlName="Appointment_Number" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Native_Language</mat-label>
+                <input matInput placeholder="Enter Candidate number" formControlName="Native_Language" required>
+            </mat-form-field>
+        </div>
+        <!-- <div>
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input matInput placeholder="Selct Test Date" formControlName="Test_Date" required>
+            </mat-form-field>
+        </div> -->
+        <div>
+            <mat-form-field>
+                <mat-label>Test Center</mat-label>
+                <input matInput placeholder="Enter center number" formControlName="Test_Center" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Test Center Country</mat-label>
+                <input matInput placeholder="Enter center number" formControlName="Test_Center_Country" required>
+            </mat-form-field>
+        </div>
+        
+        <div class="score row">
+            <mat-form-field class="col-md-4">
+                <mat-label>Listening</mat-label>
+                <input matInput placeholder="Enter Listening score" formControlName="Listening" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field  class="col-md-4">
+                <mat-label>Reading</mat-label>
+                <input matInput placeholder="Enter Reading Score" formControlName="Reading" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field class="col-md-4">
+                <mat-label>Writing</mat-label>
+                <input matInput placeholder="Enter Writing score" formControlName="Writing" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field class="col-md-4">
+                <mat-label>Speaking</mat-label>
+                <input matInput placeholder="Enter Speaking Score" formControlName="Speaking" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+            <mat-form-field class="col-md-4">
+                <mat-label>Total Score</mat-label>
+                <input matInput placeholder="TotalScore" formControlName="total_score" required>
+                <!-- <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error> -->
+            </mat-form-field>
+        </div>
+        <button type="button" mat-raised-button (click)="closeDialog()">Close</button> 
+        <button  mat-raised-button color="primary" style="float: right;" >Save</button>
+
+    </form>
+        
+        <div>
+
+        </div>
+    </div>
+    <!-- <button type="button" mat-raised-button (click)="closeDialog()">Next</button> -->
+</div>

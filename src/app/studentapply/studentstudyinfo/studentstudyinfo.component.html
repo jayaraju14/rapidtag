@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <div class="container">
+        <!-- <mat-progress-bar [value]="progress"></mat-progress-bar> -->
+
+        <!-- <h1 class="title">Select application type</h1> -->
+        <div>
+            <mat-tab-group animationDuration="0ms" [selectedIndex]="selectedIndex" dynamicHeight mat-stretch-tabs="false" mat-align-tabs="center" #tabGroup>
+                
+                <mat-tab label="Student Details">
+                    <!-- student details component -->
+                    <app-studentdetails (nexStep)="nextStep()"></app-studentdetails>
+                </mat-tab>
+                <mat-tab label="Education">
+                    <app-educationdetails (nexStep)="nextStep()"></app-educationdetails>
+                </mat-tab>
+                <mat-tab label="University Selection">
+                    <!-- unversity selection component -->
+                    <app-universityselection (nexStep)="nextStep()"></app-universityselection>
+
+                </mat-tab>
+                <mat-tab label="Document upload">
+                    <app-documents (nexStep)="nextStep()"></app-documents>
+                </mat-tab>
+                <mat-tab label="Submit">
+                    <app-studentsubmit (nexStep)="nextStep()"></app-studentsubmit>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

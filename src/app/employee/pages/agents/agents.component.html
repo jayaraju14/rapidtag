@@ -1,0 +1,58 @@
+<mat-form-field>
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)">
+</mat-form-field>
+<div id="pluswrap" *ngIf="loader">
+    <div class="plus">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>
+<table mat-table [dataSource]="dataSource" matSort>
+    <!-- Column definitions -->
+    <ng-container matColumnDef="Agent_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Agent ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.agent_id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Agency_name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Agency Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.company_name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="DOR">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of registration </th>
+        <td mat-cell *matCellDef="let element"> {{element.created_at | date}} </td>
+    </ng-container> 
+    <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> city </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+    <ng-container matColumnDef="state">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> state </th>
+        <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+    <ng-container matColumnDef="assignedTo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> assigned to </th>
+        <td mat-cell *matCellDef="let element"> {{element.approved_by}} </td>
+    </ng-container>
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button  [matMenuTriggerFor]="menu">
+                <!-- (click)="edit(element)" -->
+                <mat-icon>edit</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="changeStatus(element,element.id,'Approve')">Approve</button>
+                <button mat-menu-item (click)="changeStatus(element,element.id,'Reject')">Reject</button>
+              </mat-menu>
+        </td>
+    </ng-container>
+    <!-- Table rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="pageSize"
+></mat-paginator>

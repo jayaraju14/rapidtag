@@ -1,0 +1,97 @@
+<div class="wrapper">
+    <div class="modelheader">
+        <a>Back</a>
+        <button mat-raised-button color="primary" style="float: right;">Save</button>
+    </div>
+    <h2 style="text-align: center;">DUOLINGO Score Reporting</h2>
+    <div class="modelcontent">
+        <!-- <mat-card class="calender">
+            <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+        </mat-card> -->
+        <form [formGroup]="IELTSForm" (ngSubmit)="saveData()">
+        <div>
+            <mat-form-field>
+                <mat-label>Test Date</mat-label>
+                <input matInput placeholder="Selct Test Date" formControlName="Date" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Comprehension</mat-label>
+                <input matInput placeholder="Enter Comprehension" formControlName="Comprehension" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Conversation</mat-label>
+                <input matInput placeholder="Enter Conversation" formControlName="Conversation" required>
+            </mat-form-field>
+        </div>
+        <!-- <div>
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input matInput placeholder="Selct Test Date" formControlName="Test_Date" required>
+            </mat-form-field>
+        </div> -->
+        <div>
+            <mat-form-field>
+                <mat-label>Literacy</mat-label>
+                <input matInput placeholder="Enter Literacy" formControlName="Literacy" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Overall</mat-label>
+                <input matInput placeholder="Enter Overall" formControlName="Overall" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Literacy</mat-label>
+                <input matInput placeholder="Enter Production" formControlName="Production" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>certs</mat-label>
+                <input matInput placeholder="Enter certs" formControlName="certs" required>
+            </mat-form-field>
+        </div>
+        <!-- <div class="score row">
+            <mat-form-field class="col-md-4">
+                <mat-label>Listening</mat-label>
+                <input matInput placeholder="Enter Listening score" formControlName="Listening" required>
+                
+            </mat-form-field>
+            <mat-form-field  class="col-md-4">
+                <mat-label>Reading</mat-label>
+                <input matInput placeholder="Enter Reading Score" formControlName="Reading" required>
+                
+            </mat-form-field>
+            <mat-form-field class="col-md-4">
+                <mat-label>Writing</mat-label>
+                <input matInput placeholder="Enter Writing score" formControlName="Writing" required>
+                
+            </mat-form-field>
+            <mat-form-field class="col-md-4">
+                <mat-label>Speaking</mat-label>
+                <input matInput placeholder="Enter Speaking Score" formControlName="Speaking" required>
+                
+            </mat-form-field>
+            <mat-form-field class="col-md-4">
+                <mat-label>Score</mat-label>
+                <input matInput placeholder="Score" formControlName="Score" required>
+                
+            </mat-form-field>
+        </div> -->
+        <button type="button" mat-raised-button (click)="closeDialog()">Close</button> 
+        <button  mat-raised-button color="primary" style="float: right;" >Save</button>
+
+    </form>
+        
+        <div>
+
+        </div>
+    </div>
+    <!-- <button type="button" mat-raised-button (click)="closeDialog()">Next</button> -->
+</div>

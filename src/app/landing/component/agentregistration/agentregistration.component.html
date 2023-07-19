@@ -1,31 +1,70 @@
-<div class="container">
-    <h1 color="primary" headline-1>Start Agent Registration</h1>
-    <p>If you would like to become a recognised Study Group agent, please complete the following form. The form is in eight steps and must be completed in English.</p><br>
-    <div class="example-container">
-        <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
-            <mat-form-field>
-                <mat-label>First Name</mat-label>
-                <input matInput placeholder="please enter your first name" formControlName="first_name" required>
-                <mat-error *ngIf="f.first_name.invalid">Please enter valid first name</mat-error>
-            </mat-form-field><br><br>
-            <mat-form-field>
-                <mat-label>Last Name</mat-label>
-                <input matInput placeholder="please enter your last name" formControlName="last_name" required>
-                <mat-error *ngIf="f.last_name.invalid">Please enter valid last name</mat-error>
-            </mat-form-field><br><br>
-            <mat-form-field>
-                <mat-label>Company Name</mat-label>
-                <input matInput placeholder="please enter your Company name" formControlName="company_Name" required>
-                <mat-error *ngIf="f.company_Name.invalid">Please enter valid comopnay name</mat-error>
-            </mat-form-field><br><br>
-            <mat-form-field>
-                <mat-label>Enter your email</mat-label>
-                <input matInput placeholder="pat@example.com" formControlName="Email_Address" required>
-                <mat-error *ngIf="f.Email_Address.invalid">Please enter valid email</mat-error>
-            </mat-form-field><br><br><br>
+<div class="container wrapper">
+    <div id="pluswrap" *ngIf="loader">
+        <div class="plus">
+            <mat-spinner></mat-spinner>
+        </div>
+      </div>
+    <div class="row">
+        <!-- <div class="col-6"></div> -->
+        <div class="">
+            <h1 color="primary" headline-1>Start Agent Registration</h1>
+            <p>If you would like to become a recognised TAG agent, please complete the following form.</p><br>
+        <div class="row">    
+            <div class="form-container col-md-8">
+                <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+                    <div class="form-group row">
+                        <label for="firstName" class="col-sm-2 col-form-label">First name : </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="firstName" placeholder="please enter your first name" formControlName="first_name" required>
+                            <mat-error *ngIf=" (f.first_name.touched || submitted) && f.first_name.errors?.required">Please enter valid first name</mat-error>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastname" class="col-sm-2 col-form-label">Last name : </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="lastname" placeholder="please enter your last name" formControlName="last_name" required>
+                            <mat-error *ngIf=" (f.last_name.touched  || submitted) && f.last_name.errors?.required ">Please enter valid last name</mat-error>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="companyname" class="col-sm-2 col-form-label">Company name : </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="companyname" placeholder="please enter your company name" formControlName="company_name" required>
+                            <mat-error *ngIf=" (f.company_name.touched  || submitted) && f.company_name.errors?.required">Please enter valid company name</mat-error>
 
-            <mat-checkbox required>I Consent to the collection of my personal information in accordance with the TAG Privacy Policy</mat-checkbox><br><br>
-            <button mat-raised-button color="primary" [routerLink]="['/agent-registerDetails']">Start Registration</button>
-        </form>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="emailaddress" class="col-sm-2 col-form-label">Enter your email : </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="emailaddress" placeholder="please enter your email" [pattern]="mailvalid" formControlName="email" required>
+                            <mat-error *ngIf=" (f.email.touched  || submitted) && f.email.errors?.required">Please enter email address</mat-error>
+                            <mat-error *ngIf="f.email?.errors?.pattern">Please enter valid email address</mat-error>
+                        </div>
+                    </div>
+                    <mat-checkbox [checked]="policyAgree" (change)="onchecked()">I consent to the collection of my personal information in accordance with the TAG Privacy Policy</mat-checkbox><br><br>
+                    <!-- <button mat-raised-button class="validate-btn">Start Registration</button><br><br> -->
+                    <button mat-raised-button class="validate-btn">Start Registration</button><br><br>
+                    <!-- [routerLink]="['/validate-agent']" -->
+                </form>
+            </div>
+            <div class="col-md-4 regExist">
+                <h4>Already started registration?<a href="#" [routerLink]="['/continue-agent-registration']"> &nbsp; Continue</a></h4>
+            </div>
+        </div>
+        </div>
     </div>
 </div>
+<!-- <div class="container">
+    <div class="row">
+        <embed type="text/html" src="https://share.hsforms.com/1i2MERsz-TMC1d_iTIB5LzAe120v" width="500" height="1200">
+    </div>
+</div>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    region: "na1",
+    portalId: "23563903",
+    formId: "8b630446-ccfe-4cc0-b577-f893201e4bcc"
+  });
+</script> -->
